@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    #start wagtail
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
     'wagtail.embeds',
@@ -53,7 +54,10 @@ INSTALLED_APPS = [
     'modelcluster',
     'taggit',
 
-    'site_settings'
+    #end wagtail
+
+    'site_settings',
+    'blog',
 ]
 
 MIDDLEWARE = [
