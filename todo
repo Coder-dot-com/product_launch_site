@@ -1,5 +1,7 @@
 1. Buy and render new template, delete all old templates
-    -make header not sticky
+
+    -subscribe cta at bottom of page change it to an include as its used on homepage and blog pages
+    -also update text
 
 
 1.5. set up blog pages

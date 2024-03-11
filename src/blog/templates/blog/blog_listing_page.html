@@ -12,38 +12,10 @@
                     <div class="col-lg-12">
                         <div class="hero-content-two text-center">
                             <div class="tj-sec-heading-two">
-                                <h1 class="title">The Latest News, Trends, and Best Practices On Product Development & Launch Strategies
+                                <h1 class="title">The Latest On Product Development & Launch Strategies
                                 </h1>
-                             
                             </div>
                         </div>
-                        <div class="hero-middle-area">
-                            <div class="hero-input-form">
-                                <div class="hero-input">
-                                    <input
-                                        type="email"
-                                        id="mail"
-                                        name="mail"
-                                        placeholder="Enter your email address"
-                                        required=""
-                                    />
-                                </div>
-                                <div class="tj-hero-button">
-                                    <button class="tj-primary-black-btn" type="submit" value="submit">
-                                        Signup to email list
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="header-list text-center">
-                                <ul class="list-gap">
-                                    <li><i class="flaticon-checkmark"></i> Unsubscribe at any time</li>
-                                    <!-- <li><i class="flaticon-checkmark"></i> 30 day free trial</li> -->
-                                </ul>
-                            </div>
-                        </div>
-                        {% comment %} <div class="hero-image shake-y text-center">
-                            <img src="{% static 'saasify_theme/assets/images/banner/hero1.png' %}" alt="Image" />
-                        </div> {% endcomment %}
                     </div>
                 </div>
             </div>
@@ -70,95 +42,35 @@
         <!--========== Blog Section Start ==============-->
         <section class="tj-blog-section" data-bg-image="assets/images/shape/group-overly.svg' %}">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="tj-sec-heading-two text-center">
-                            <span class="sub-title"> Our Blog</span>
-                        </div>
-                    </div>
-                </div>
                 <div class="row justify-content-center">
+                    {% for page in posts %}
+
                     <div class="col-lg-4 col-md-6">
                         <div class="tj-blog-item">
+                            {% if page.title_image %}
                             <div class="blog-image">
-                                <a href="blog-details.html"> <img src="{% static 'saasify_theme/assets/images/blog/blog-1.jpg' %}" alt="Image" /></a>
+                                <a href="{{page.url}}"> <img src="{{page.title_image.url}}" alt="Image" /></a>
                             </div>
+                            {% endif %}
                             <div class="blog-content-area">
                                 <div class="blog-meta">
                                     <ul class="list-gap">
-                                        <li><i class="flaticon-time-left"></i> 5 weeks ago</li>
-                                        <li><i class="flaticon-settings"></i> <a href="#"> Creative</a></li>
+                                        <li><i class="flaticon-time-left"></i>  {{page.date}}</li>
                                     </ul>
                                 </div>
                                 <h4 class="title-link">
-                                    <a class="blog-title" href="blog-details.html">
-                                        Best Practices and common Pitfalls of AI</a
-                                    >
+                                    <a class="blog-title" href="{{page.url}}">
+                                        {{page.title}}
+                                    </a>
                                 </h4>
-                                <p>
-                                    It was popularised in the 1960s with the release of Letraset sheets containing Lorem
-                                    Ipsum passages,
-                                </p>
                                 <div class="tj-blog-button">
-                                    <a class="tj-black-btn" href="blog-details.html"> Read more</a>
+                                    <a class="tj-black-btn" href="{{page.url}}"> Read more</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="tj-blog-item">
-                            <div class="blog-image">
-                                <a href="blog-details.html"> <img src="{% static 'saasify_theme/assets/images/blog/blog-2.jpg' %}" alt="Image" /></a>
-                            </div>
-                            <div class="blog-content-area">
-                                <div class="blog-meta">
-                                    <ul class="list-gap">
-                                        <li><i class="flaticon-time-left"></i> 10 weeks ago</li>
-                                        <li><i class="flaticon-settings"></i> <a href="#"> Creative</a></li>
-                                    </ul>
-                                </div>
-                                <h4 class="title-link">
-                                    <a class="blog-title" href="blog-details.html">
-                                        What customer service processes provide</a
-                                    >
-                                </h4>
-                                <p>
-                                    It was popularised in the 1960s with the release of Letraset sheets containing Lorem
-                                    Ipsum passages,
-                                </p>
-                                <div class="tj-blog-button">
-                                    <a class="tj-black-btn" href="blog-details.html"> Read more</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="tj-blog-item">
-                            <div class="blog-image">
-                                <a href="blog-details.html"> <img src="{% static 'saasify_theme/assets/images/blog/blog-3.jpg' %}" alt="Image" /></a>
-                            </div>
-                            <div class="blog-content-area">
-                                <div class="blog-meta">
-                                    <ul class="list-gap">
-                                        <li><i class="flaticon-time-left"></i> 3 weeks ago</li>
-                                        <li><i class="flaticon-settings"></i> <a href="#"> Creative</a></li>
-                                    </ul>
-                                </div>
-                                <h4 class="title-link">
-                                    <a class="blog-title" href="blog-details.html">
-                                        Powerful AI Model Switches to quantum</a
-                                    >
-                                </h4>
-                                <p>
-                                    It was popularised in the 1960s with the release of Letraset sheets containing Lorem
-                                    Ipsum passages,
-                                </p>
-                                <div class="tj-blog-button">
-                                    <a class="tj-black-btn" href="blog-details.html"> Read more</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}    
+                
                 </div>
             </div>
             <div class="tj-star-group">
