@@ -9,7 +9,7 @@
         <meta name="description" content="" />
 
         <!-- Site Title -->
-        <title>Saasify - Startup & SaaS Landing Page HTML Template</title>
+        <title>Launchand - With you from idea to launch and beyond</title>
         <!-- Favicon -->
         <link rel="apple-touch-icon" href="{% static 'saasify_theme/assets/images/fav.svg' %}" />
         <link rel="shortcut icon" type="image/x-icon" href="{% static 'saasify_theme/assets/images/fav.svg' %}" />
@@ -41,7 +41,7 @@
         <div id="tj-overlay-bg2" class="tj-overlay-canvas"></div>
 
         <!-- preloader -->
-        <div id="loading">
+        {% comment %} <div id="loading">
             <div id="loading-center">
                 <div id="loading-center-absolute">
                     <div class="object" id="object_four"></div>
@@ -51,14 +51,14 @@
                 </div>
                 <button class="closeLoader tj-primary-black-btn"><span>Cancel Preloader</span></button>
             </div>
-        </div>
+        </div> {% endcomment %}
         <!-- end: Preloader -->
 
         <!--========== Mobile Menu Start ==============-->
         <div class="tj-offcanvas-area">
             <div class="tj-offcanvas-header d-flex align-items-center justify-content-between">
                 <div class="logo-area text-center">
-                    <a href="index.html"><img src="{% static 'saasify_theme/assets/images/logo/mobile-logo.png' %}" alt="Logo" /></a>
+                    <a href="index.html"><img src="{{site.site_logo.url}}" alt="LaunchHand - Product development and launch" /></a>
                 </div>
                 <div class="offcanvas-icon">
                     <a id="canva_close" href="#">
@@ -78,50 +78,31 @@
                 <div class="row">
                     <div class="header-content-two">
                         <div class="logo-area">
-                            <a href="index.html"><img src="{% static 'saasify_theme/assets/images/logo/logo2.png' %}" alt="Logo" /></a>
+                            <a href="/"><img src="{{site.site_logo.url}}" alt="LaunchHand - Product development and launch" /></a>
                         </div>
                         <!-- Mainmenu Start -->
                         <div class="tj-main-menu d-lg-block d-none text-center" id="main-menu">
                             <ul class="main-menu">
-                                <li class="has-dropdown">
-                                    <a class="active" href="#"> Home</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="index.html"> Home One</a></li>
-                                        <li class="active"><a class="active" href="index2.html"> Home Two</a></li>
-                                        <li><a href="index3.html"> Home Three</a></li>
-                                        <li><a href="index4.html"> Home Four</a></li>
-                                    </ul>
+                                <li class="">
+                                    
+                                    <a class="{% if request.path == "/" %} active{% endif %}" href="/"> Home</a>
+                                  
                                 </li>
-                                <li>
-                                    <a href="about.html"> About Us</a>
+                         
+                              
+                                <li class="">
+                                    <a href="/blog"> Blog</a>
                                 </li>
-                                <li class="has-dropdown">
-                                    <a href="#"> Pages</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="feature.html"> Feature</a></li>
-                                        <li><a href="pricing.html"> Pricing Plan</a></li>
-                                        <li><a href="faq.html"> FAQ</a></li>
-                                    </ul>
-                                </li>
-                                <li class="has-dropdown">
-                                    <a href="#"> Blog</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="blog.html"> Blog Grid</a></li>
-                                        <li><a href="blog-details.html"> Blog Details</a></li>
-                                        <li><a href="blog-details-sidebar.html"> Blog Details Sidebar</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="contact.html">Contact</a></li>
                             </ul>
                         </div>
                         <!-- Mainmenu Item End -->
                         <div class="header-button-box d-lg-block d-none">
-                            <div class="tj-login-button header-button">
+                            {% comment %} <div class="tj-login-button header-button">
                                 <a class="tj-black-btn" href="contact.html"> Login </a>
                             </div>
                             <div class="tj-singup-button header-button">
                                 <a class="tj-primary-black-btn" href="contact.html"> Sing up</a>
-                            </div>
+                            </div> {% endcomment %}
                         </div>
                         <div class="tj-canva-icon d-lg-none">
                             <a class="canva_expander nav-menu-link menu-button" href="#">

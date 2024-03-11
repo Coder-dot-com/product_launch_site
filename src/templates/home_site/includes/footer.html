@@ -4,37 +4,21 @@
         <footer class="tj-footer-area footer-v2">
             <div class="footer-menu-area">
                 <div class="container">
-                    <div class="row">
+                    <div class="row" style="justify-content: space-evenly;">
                         <div class="col-lg-4">
                             <div class="footer-widget footer1-col-1 footer-widget-content">
                                 <div class="footer-logo">
                                     <a href="index.html">
-                                        <img src="{% static 'saasify_theme/assets/images/logo/logo.png' %}" alt="Logo" />
+                                        <img src="{{site.site_logo.url}}" alt="Logo" />
                                     </a>
                                 </div>
                                 <p class="desc">
-                                    Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo
-                                    minus id quod maxime placeat
+                                    With you from idea to launch and beyond
                                 </p>
-                                <div class="footer-social-list">
-                                    <ul class="list-gap">
-                                        <li>
-                                            <a href="#"> <i class="fa-brands fa-linkedin-in"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> <i class="fa-brands fa-facebook-f"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> <i class="fa-brands fa-twitter"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> <i class="fa-brands fa-instagram"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
+                            
                             </div>
                         </div>
-                        <div class="col-lg-2 col-md-6 col-sm-6 col-6">
+                        {% comment %} <div class="col-lg-2 col-md-6 col-sm-6 col-6">
                             <div class="footer-widget footer1-col-2 widget_nav_menu">
                                 <h6 class="title">Compnay</h6>
                                 <div class="footer-menu-list">
@@ -46,8 +30,8 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-2 col-md-6 col-sm-6 col-6">
+                        </div> {% endcomment %}
+                        {% comment %} <div class="col-lg-2 col-md-6 col-sm-6 col-6">
                             <div class="footer-widget footer1-col-3 widget_nav_menu">
                                 <h6 class="title">Product</h6>
                                 <div class="footer-menu-list">
@@ -60,21 +44,20 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-2 col-md-6 col-sm-6 col-6">
+                        </div> {% endcomment %}
+                        <div class="col-lg-2 col-md-6 col-sm-6 col-6 ">
                             <div class="footer-widget footer1-col-4 widget_nav_menu">
                                 <h6 class="title">Legal</h6>
                                 <div class="footer-menu-list">
                                     <ul>
                                         <li><a href="#"> Privacy Policy</a></li>
-                                        <li><a href="#"> Cookies Policy</a></li>
-                                        <li><a href="#"> Privacy Policy</a></li>
-                                        <li><a href="#"> Cookies Policy</a></li>
+                                        <li><a href="#"> Terms & Conditions</a></li>
+                              
                                     </ul>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-2 col-md-6 col-sm-6 col-6">
+                        {% comment %} <div class="col-lg-2 col-md-6 col-sm-6 col-6">
                             <div class="footer-widget footer1-col-5 widget_nav_menu">
                                 <h6 class="title">Help</h6>
                                 <div class="footer-menu-list">
@@ -85,7 +68,7 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div>
+                        </div> {% endcomment %}
                     </div>
                 </div>
             </div>
