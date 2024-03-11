@@ -1,0 +1,311 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Feature CSS
+----------------------------------------*/
+.tj-feature-section {
+    padding-top: 110px;
+    padding-bottom: 60px;
+    position: relative;
+    overflow: hidden;
+    .tj-sec-heading-two {
+        margin-bottom: 80px;
+        .title {
+            max-width: 850px;
+            margin: auto;
+        }
+    }
+    .feature-overly {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .feature-overly-1 {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}
+
+.tj-feature-item {
+    border-radius: 10px;
+    border: 1px solid var(--tj-color-light-6);
+    @include transition(all 0.4s ease-in-out 0s);
+    margin-bottom: 60px;
+    margin-top: 0;
+    position: relative;
+    z-index: 3;
+    .feature-icon {
+        position: relative;
+        margin-left: 30px;
+        margin-top: -30px;
+        width: 60px;
+        height: 60px;
+        line-height: 68px;
+        text-align: center;
+        display: inline-block;
+        font-size: 35px;
+        border-radius: 8px;
+        border: 1px solid var(--tj-color-theme-primary);
+        background-color: var(--tj-color-common-white);
+        z-index: 3;
+        &::before {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+            left: 0;
+            top: 0;
+            visibility: hidden;
+            z-index: -1;
+            opacity: 0;
+            background: var(
+                --gradients-color-gd-1,
+                linear-gradient(
+                    90deg,
+                    var(--tj-color-gradient-1) 0%,
+                    var(--tj-color-gradient-3) 100%,
+                    var(--tj-color-gradient-2) 100%
+                )
+            );
+            @include transition(all 0.4s ease-in-out 0s);
+        }
+    }
+    .feature-content {
+        padding: 30px 30px;
+        .title-link {
+            color: var(--tj-color-common-black-3);
+        }
+        .desc {
+            margin-bottom: 0;
+        }
+    }
+    &:hover {
+        border-color: 1px solid var(--tj-color-gradient-1);
+        background: var(--tj-color-common-white);
+        box-shadow: 15px 9px 30px 0px rgba(117, 77, 233, 0.15);
+        margin-top: -25px;
+        .feature-content {
+            .title-link {
+                background: var(
+                    --gradients-color-gd-1,
+                    linear-gradient(
+                        90deg,
+                        var(--tj-color-gradient-1) 0%,
+                        var(--tj-color-gradient-3) 100%,
+                        var(--tj-color-gradient-2) 100%
+                    )
+                );
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+        .feature-icon {
+            &::before {
+                opacity: 1;
+                visibility: visible;
+            }
+            border-color: transparent;
+            color: var(--tj-color-common-white);
+        }
+    }
+}
+
+.feature-section-two {
+    padding-top: 110px;
+    padding-bottom: 120px;
+    position: relative;
+    .feature-text {
+        border-radius: 55px;
+        background: var(--tj-color-light-5);
+        color: var(--tj-color-heading-primary);
+        position: absolute;
+        top: -25%;
+        padding: 10px 15px;
+        left: 33%;
+        i {
+            position: relative;
+            top: 3px;
+            margin-right: 5px;
+        }
+    }
+    .feature-text-two {
+        border-radius: 55px;
+        background: var(--tj-color-light-1);
+        color: var(--tj-color-common-white);
+        position: absolute;
+        top: 30%;
+        padding: 10px 15px;
+        right: -12%;
+        z-index: 3;
+        i {
+            position: relative;
+            top: 3px;
+            margin-right: 5px;
+        }
+    }
+    .feature-shape {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .feature-shape1 {
+        position: absolute;
+        right: 0;
+        top: 16%;
+        transform: translateY(-50%);
+    }
+    .tj-sec-heading {
+        .title {
+            max-width: 450px;
+        }
+    }
+}
+
+.feature-content-box {
+    position: relative;
+    z-index: 3;
+    .tj-sec-heading {
+        margin-bottom: 60px;
+    }
+    .desc {
+        max-width: 670px;
+    }
+}
+
+.feature-item-two {
+    padding: 40px 40px;
+    margin-bottom: 30px;
+    @include transition(all 0.4s ease-in-out 0s);
+    position: relative;
+    &::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        border-radius: 0 20px 20px 20px;
+        opacity: 0;
+        visibility: hidden;
+        background: linear-gradient(
+            119deg,
+            var(--tj-color-gradient-1) 1.65%,
+            var(--tj-color-gradient-3) 126.29%,
+            var(--tj-color-gradient-2) 126.29%
+        );
+        @include transition(all 0.4s ease-in-out 0s);
+    }
+    &.margin_top {
+        margin-top: 30px;
+        margin-bottom: 0;
+    }
+    .feature-content {
+        position: relative;
+        z-index: 3;
+    }
+    &.hover-shape-border {
+        position: relative;
+        border-radius: 0 20px 20px 20px;
+        background: var(--tj-color-common-white);
+        box-shadow: 15px 9px 30px 0px rgba(19, 0, 49, 0.03);
+    }
+    .border-shadow {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: 9;
+    }
+    .feature-item-shape {
+        .shadow-1 {
+            top: 0px;
+            left: 0;
+            background: linear-gradient(to bottom, var(--tj-color-gradient-1) -100%, rgba(21, 22, 37, 0) 64%);
+            width: 1.5px;
+            height: 280px;
+        }
+        .shadow-2 {
+            top: 0;
+            left: 0px;
+            background: linear-gradient(to right, var(--tj-color-gradient-1) -100%, rgba(21, 22, 37, 0) 64%);
+            width: 350px;
+            height: 1.5px;
+        }
+    }
+    .feature-icon {
+        margin-bottom: 25px;
+        position: relative;
+        z-index: 3;
+        i {
+            width: 80px;
+            height: 80px;
+            line-height: 90px;
+            text-align: center;
+            display: inline-block;
+            border-radius: 10px;
+            font-size: 45px;
+            color: var(--tj-color-gradient-1);
+            border: 1.5px solid var(--tj-color-gradient-1);
+        }
+    }
+    .title {
+        margin-bottom: 20px;
+        background: linear-gradient(
+            90deg,
+            var(--tj-color-gradient-1) 0%,
+            var(--tj-color-gradient-3) 100%,
+            var(--tj-color-gradient-2) 100%
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .desc {
+        margin-bottom: 0;
+    }
+    &:hover {
+        &::before {
+            opacity: 1;
+            visibility: visible;
+        }
+        .feature-icon {
+            i {
+                border: 1.5px solid var(--tj-color-common-white);
+                color: var(--tj-color-common-white);
+            }
+        }
+        .title {
+            background: linear-gradient(
+                90deg,
+                var(--tj-color-common-white) 0%,
+                var(--tj-color-common-white) 100%,
+                var(--tj-color-common-white) 100%
+            );
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .desc {
+            color: var(--tj-color-common-white);
+        }
+    }
+}
+
+.feature-geroup-image {
+    position: relative;
+    .image-2 {
+        position: absolute;
+        right: -32%;
+        top: -15%;
+    }
+    .image-3 {
+        position: absolute;
+        left: 6%;
+        top: -18%;
+    }
+}
+
+/* !END: Feature CSS */

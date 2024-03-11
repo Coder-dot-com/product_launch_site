@@ -1,0 +1,140 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Faq CSS
+----------------------------------------*/
+
+.tj-faq-section {
+    padding-top: 120px;
+    padding-bottom: 60px;
+    position: relative;
+    .tj-sec-heading-two {
+        margin-bottom: 25px;
+    }
+}
+
+.tj-faq-content-one {
+    margin-bottom: 50px;
+    .desc {
+        margin-bottom: 45px;
+    }
+}
+
+.tj-faq-style {
+    .accordion-item {
+        border: none;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        background: linear-gradient(
+            90deg,
+            var(--tj-color-gradient-1) 0%,
+            var(--tj-color-gradient-3) 100%,
+            var(--tj-color-gradient-2) 100%
+        );
+        box-shadow: none;
+        position: relative;
+        z-index: 9;
+        .accordion-header {
+            .accordion-button {
+                background: transparent;
+                font-size: 18px;
+                padding: 25px 60px 25px 25px;
+                color: var(--tj-color-common-black-3);
+                font-family: var(--tj-ff-heading);
+                font-weight: var(--tj-fw-sbold);
+                background-color: transparent;
+                position: relative;
+                border-bottom: 1px solid transparent;
+                &.collapsed {
+                    background-color: var(--tj-color-grey-6);
+                }
+                &:before {
+                    position: absolute;
+                    top: 20px;
+                    right: 15px;
+                    content: "\2b";
+                    font-family: "Font Awesome 6 Pro";
+                    font-weight: 400;
+                    width: 30px;
+                    height: 30px;
+                    line-height: 30px;
+                    text-align: center;
+                    border-radius: 50%;
+                    color: var(--tj-color-common-white);
+                    background: var(
+                        --gradients-color-gd-1,
+                        linear-gradient(
+                            90deg,
+                            var(--tj-color-gradient-1) 0%,
+                            var(--tj-color-gradient-3) 100%,
+                            var(--tj-color-gradient-2) 100%
+                        )
+                    );
+                    transition: 0.4s;
+                }
+
+                &:not(.collapsed) {
+                    box-shadow: none;
+                    color: var(--tj-color-common-white);
+                    &:before {
+                        content: "\f068";
+                        background: var(--tj-color-common-white);
+                        color: var(--tj-color-gradient-3);
+                    }
+                }
+                &:focus {
+                    box-shadow: none;
+                }
+                &:after {
+                    display: none;
+                }
+            }
+        }
+        .accordion-body {
+            padding: 5px 40px 25px;
+            strong {
+                font-size: 16px;
+                color: var(--tj-color-common-white);
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+.faq-star-circle {
+    .star-1 {
+        position: absolute;
+        top: 35%;
+        left: 45%;
+        animation: rotateImg 15s infinite linear;
+    }
+    .star-2 {
+        position: absolute;
+        top: 18%;
+        left: 40%;
+        animation: rotateImg 15s infinite linear;
+    }
+}
+
+.faq-image {
+    position: relative;
+    z-index: 3;
+    &::before {
+        position: absolute;
+        content: "";
+        width: 515px;
+        height: 443px;
+        top: 0;
+        left: 0;
+        background: var(--tj-color-light-6);
+        border-radius: 0 0 300px 300px;
+    }
+    img {
+        border-radius: 0 0 300px 300px;
+        position: relative;
+        padding-left: 80px;
+        z-index: 3;
+    }
+}
+
+/* !END: Faq CSS */

@@ -1,4 +1,4 @@
-{% extends 'home_site/base.html' %}
+{% extends 'blog/base.html' %}
 {% load static %}
 {% load wagtailcore_tags  cache  %}
 
@@ -15,22 +15,12 @@
 </title>
 
 <div class="container">
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/">{{site.site_name}}</a></li>
-            <li class="breadcrumb-item {% if not category.name %} active {% endif %}"><a href="{% url 'wagtail_serve' '' %}blog">Blog</a></li>
-            {% if category.name %}
-            <li class="breadcrumb-item active" aria-current="page">{{ category.name }}
-            {% endif %}
-            </li>
-        </ol>
-    </nav>
 
     <main>
 
       <h1 class="m-1">
         {% if category.name %}
-        {{category.name}} articles 
+        {{category.name}} 
         {% else %}
         All blog posts
         {% endif %}

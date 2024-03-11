@@ -1,0 +1,135 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Preloder CSS
+----------------------------------------*/
+#loading {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 99999;
+    margin-top: 0px;
+    top: 0px;
+}
+#loading::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--tj-color-gradient-1);
+    z-index: -1;
+}
+#loading #loading-center {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+#loading #loading-center #loading-center-absolute {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 200px;
+    width: 200px;
+    margin-top: -100px;
+    margin-left: -100px;
+    -webkit-transform: rotate(-135deg);
+    -ms-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
+#loading #loading-center #loading-center-absolute .object {
+    border-radius: 50% 50% 50% 50%;
+    position: absolute;
+    border-top: 5px solid var(--tj-color-extra-3);
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid var(--tj-color-extra-3);
+    border-right: 5px solid transparent;
+    -webkit-animation: animate 2s infinite;
+    animation: animate 2s infinite;
+}
+
+#loading #loading-center #loading-center-absolute .object-1 {
+    border-radius: 50% 50% 50% 50%;
+    position: absolute;
+    border-top: 5px solid var(--tj-color-extra-1);
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid var(--tj-color-extra-1);
+    border-right: 5px solid transparent;
+    -webkit-animation: animate 2s infinite;
+    animation: animate 2s infinite;
+}
+
+#loading #loading-center #loading-center-absolute .object-2 {
+    border-radius: 50% 50% 50% 50%;
+    position: absolute;
+    border-top: 5px solid var(--tj-color-extra-2);
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid var(--tj-color-extra-2);
+    border-right: 5px solid transparent;
+    -webkit-animation: animate 2s infinite;
+    animation: animate 2s infinite;
+}
+
+#loading #loading-center #loading-center-absolute .object-3 {
+    border-radius: 50% 50% 50% 50%;
+    position: absolute;
+    border-top: 5px solid var(--tj-color-extra-4);
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid var(--tj-color-extra-4);
+    border-right: 5px solid transparent;
+    -webkit-animation: animate 2s infinite;
+    animation: animate 2s infinite;
+}
+
+#loading #loading-center #loading-center-absolute #object_one {
+    left: 75px;
+    top: 75px;
+    width: 50px;
+    height: 50px;
+}
+#loading #loading-center #loading-center-absolute #object_two {
+    left: 65px;
+    top: 65px;
+    width: 70px;
+    height: 70px;
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+}
+#loading #loading-center #loading-center-absolute #object_three {
+    left: 55px;
+    top: 55px;
+    width: 90px;
+    height: 90px;
+    -webkit-animation-delay: 0.4s;
+    animation-delay: 0.4s;
+}
+#loading #loading-center #loading-center-absolute #object_four {
+    left: 45px;
+    top: 45px;
+    width: 110px;
+    height: 110px;
+    -webkit-animation-delay: 0.6s;
+    animation-delay: 0.6s;
+}
+#loading #loading-center .closeLoader {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 1;
+}
+
+@-webkit-keyframes animate {
+    50% {
+        -webkit-transform: rotate(360deg) scale(0.8);
+        transform: rotate(360deg) scale(0.8);
+    }
+}
+@keyframes animate {
+    50% {
+        -webkit-transform: rotate(360deg) scale(0.8);
+        transform: rotate(360deg) scale(0.8);
+    }
+}
+
+/* !END: Preloder CSS */

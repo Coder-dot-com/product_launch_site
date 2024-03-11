@@ -1,0 +1,122 @@
+@font-face {
+    font-family: "flaticon_saasify";
+    src: url("../fonts/flaticon_saasify.ttf?95f2fea4c6f1e5ab9259727b30d64183") format("truetype"),
+url("../fonts/flaticon_saasify.woff?95f2fea4c6f1e5ab9259727b30d64183") format("woff"),
+url("../fonts/flaticon_saasify.woff2?95f2fea4c6f1e5ab9259727b30d64183") format("woff2"),
+url("../fonts/flaticon_saasify.eot?95f2fea4c6f1e5ab9259727b30d64183#iefix") format("embedded-opentype"),
+url("../fonts/flaticon_saasify.svg?95f2fea4c6f1e5ab9259727b30d64183#flaticon_saasify") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon_saasify !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-customer-service:before {
+    content: "\f101";
+}
+.flaticon-research-and-development:before {
+    content: "\f102";
+}
+.flaticon-earning:before {
+    content: "\f103";
+}
+.flaticon-facebook:before {
+    content: "\f104";
+}
+.flaticon-instagram:before {
+    content: "\f105";
+}
+.flaticon-twitter:before {
+    content: "\f106";
+}
+.flaticon-instagram-1:before {
+    content: "\f107";
+}
+.flaticon-linkedin:before {
+    content: "\f108";
+}
+.flaticon-plan:before {
+    content: "\f109";
+}
+.flaticon-gold-ingots:before {
+    content: "\f10a";
+}
+.flaticon-management:before {
+    content: "\f10b";
+}
+.flaticon-user:before {
+    content: "\f10c";
+}
+.flaticon-telephone:before {
+    content: "\f10d";
+}
+.flaticon-mail:before {
+    content: "\f10e";
+}
+.flaticon-objective:before {
+    content: "\f10f";
+}
+.flaticon-target:before {
+    content: "\f110";
+}
+.flaticon-assessment:before {
+    content: "\f111";
+}
+.flaticon-puzzle:before {
+    content: "\f112";
+}
+.flaticon-settings:before {
+    content: "\f113";
+}
+.flaticon-time-tracking:before {
+    content: "\f114";
+}
+.flaticon-pipeline:before {
+    content: "\f115";
+}
+.flaticon-hand:before {
+    content: "\f116";
+}
+.flaticon-support:before {
+    content: "\f117";
+}
+.flaticon-time-left:before {
+    content: "\f118";
+}
+.flaticon-megaphone:before {
+    content: "\f119";
+}
+.flaticon-plus:before {
+    content: "\f11a";
+}
+.flaticon-checkmark:before {
+    content: "\f11b";
+}
+.flaticon-checklist:before {
+    content: "\f11c";
+}
+.flaticon-time-management:before {
+    content: "\f11d";
+}
+.flaticon-skills:before {
+    content: "\f11e";
+}
+.flaticon-cooperation:before {
+    content: "\f11f";
+}
+.flaticon-task-planning:before {
+    content: "\f120";
+}
+.flaticon-world:before {
+    content: "\f121";
+}
+.flaticon-customer-satisfaction:before {
+    content: "\f122";
+}

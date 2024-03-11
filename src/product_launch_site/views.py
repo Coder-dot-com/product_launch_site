@@ -12,11 +12,3 @@ def home(request):
 def robots_txt(request):
     return render(request, 'robots.txt')
 
-def tandc(request):
-    return render(request, 'home_site/pages/tandc.html')
-
-
-def privpolicy(request):
-    context = {
-    }
-    return render(request, 'home_site/pages/privpolicy.html', context=context)

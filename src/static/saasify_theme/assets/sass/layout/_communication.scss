@@ -1,0 +1,32 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Communication CSS
+----------------------------------------*/
+.tj-communication-section {
+    background: var(--tj-color-grey-6);
+    padding-top: 110px;
+    padding-bottom: 100px;
+    position: relative;
+    .communication-shape {
+        position: absolute;
+        left: 35%;
+        transform: translateX(-50%);
+        bottom: 10%;
+    }
+}
+
+.tj-communication-content {
+    margin-bottom: 55px;
+    .desc {
+        margin-bottom: 40px;
+    }
+}
+
+.communication-image {
+    position: relative;
+    right: -50px;
+    z-index: 9;
+}
+
+/* !END: Communication CSS */

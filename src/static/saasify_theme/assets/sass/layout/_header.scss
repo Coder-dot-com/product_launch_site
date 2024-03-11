@@ -1,0 +1,72 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme Header CSS
+----------------------------------------*/
+.tj-header-area {
+    transition: 0.4s;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+    padding: 23px 0;
+    &.bg-background-color {
+        background-color: var(--tj-color-common-white);
+    }
+    &.tj-header-sticky {
+        padding: 15px 0;
+        box-shadow: 15px 9px 30px 0px rgba(117, 77, 233, 0.15);
+        background: var(--tj-color-common-white);
+        animation: sticky 0.9s;
+    }
+}
+.header-content-area {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    .logo-area {
+        max-width: 185px;
+        width: 100%;
+        a {
+            display: inline-block;
+        }
+    }
+}
+.header-button-box {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    .header-button {
+        display: inline-flex;
+    }
+    .tj-singup-button {
+        margin-left: 25px;
+    }
+}
+
+.header-content-two {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@-webkit-keyframes sticky {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes sticky {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+/* !END: Theme Header CSS */

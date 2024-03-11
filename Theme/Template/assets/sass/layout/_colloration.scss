@@ -1,0 +1,57 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Colloration CSS
+----------------------------------------*/
+.tj-collaboration-section {
+    padding: 350px 0;
+    position: relative;
+    .tj-sec-heading .title {
+        max-width: 550px;
+    }
+    .collaboration-bg-image {
+        position: absolute;
+        left: 0;
+        width: 70%;
+        z-index: 1;
+        height: 850px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+.collaboration-shape {
+    position: absolute;
+    right: -5%;
+    top: -45%;
+}
+
+.tj-collaboration-content {
+    padding-left: 40px;
+    .desc {
+        margin-bottom: 25px;
+    }
+    .check-list {
+        margin-bottom: 35px;
+        ul {
+            li {
+                margin-bottom: 15px;
+                position: relative;
+                font-weight: var(--tj-fw-sbold);
+                font-family: var(--tj-ff-heading);
+                font-size: 18px;
+                padding-left: 30px;
+                color: var(--tj-color-heading-primary);
+                i {
+                    margin-right: 5px;
+                    position: absolute;
+                    top: 20px;
+                    transform: translateY(-50%);
+                    left: 0;
+                }
+            }
+        }
+    }
+}
+
+/* !END: Colloration CSS */

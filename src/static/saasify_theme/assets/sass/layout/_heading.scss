@@ -1,0 +1,54 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme Heading CSS
+----------------------------------------*/
+.tj-sec-heading {
+    position: relative;
+    z-index: 3;
+    .title {
+        margin-bottom: 25px;
+    }
+    .sub-title {
+        font-size: 20px;
+        font-weight: var(--tj-fw-bold);
+        font-family: var(--tj-ff-heading);
+        color: var(--tj-color-gradient-1);
+        letter-spacing: 4px;
+        display: block;
+        margin-bottom: 25px;
+    }
+}
+
+.tj-sec-heading-two {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 3;
+    .title {
+        margin-bottom: 25px;
+    }
+    .sub-title {
+        font-size: 20px;
+        font-weight: var(--tj-fw-bold);
+        font-family: var(--tj-ff-heading);
+        background: linear-gradient(
+            90deg,
+            var(--tj-color-gradient-1) 0%,
+            var(--tj-color-gradient-3) 100%,
+            var(--tj-color-gradient-2) 100%
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing: 4px;
+        display: block;
+        margin-bottom: 25px;
+    }
+}
+
+.active-color {
+    color: var(--tj-color-gradient-1);
+}
+
+/* !END: Theme Heading CSS */

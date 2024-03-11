@@ -1,0 +1,75 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Solution CSS
+----------------------------------------*/
+.tj-solution-section {
+    background: var(--tj-color-grey-6);
+    padding-top: 150px;
+    padding-bottom: 265px;
+    position: relative;
+}
+
+.tj-solution-content-one {
+    margin-top: 200px;
+    margin-bottom: 50px;
+    .tj-sec-heading {
+        .title {
+            max-width: 480px;
+        }
+    }
+    .desc {
+        margin-bottom: 25px;
+        max-width: 650px;
+    }
+    .check-list {
+        max-width: 565px;
+        margin-bottom: 35px;
+        ul {
+            li {
+                margin-bottom: 15px;
+                position: relative;
+                font-weight: var(--tj-fw-sbold);
+                font-family: var(--tj-ff-heading);
+                font-size: 18px;
+                padding-left: 30px;
+                color: var(--tj-color-heading-primary);
+                i {
+                    margin-right: 5px;
+                    position: absolute;
+                    top: 20px;
+                    transform: translateY(-50%);
+                    left: 0;
+                }
+            }
+        }
+    }
+}
+
+.solution-group-image {
+    position: relative;
+    right: -30px;
+    .image-2 {
+        position: absolute;
+        bottom: -45%;
+        right: -16%;
+        z-index: 3;
+    }
+    .image-3 {
+        position: absolute;
+        bottom: -75%;
+        left: -30%;
+    }
+    .image-4 {
+        position: absolute;
+        top: -10px;
+        left: -40%;
+    }
+    .image-5 {
+        position: absolute;
+        top: -30px;
+        right: -20%;
+    }
+}
+
+/* !END: Solution CSS */

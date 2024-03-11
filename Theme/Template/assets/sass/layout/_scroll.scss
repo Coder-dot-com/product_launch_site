@@ -1,0 +1,89 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme Scroll CSS
+----------------------------------------*/
+.saasify-scroll-top {
+    position: fixed;
+    right: 30px;
+    bottom: 25px;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    display: block;
+    border-radius: 100%;
+    box-shadow: inset 0 0 0 0.1rem rgba(128, 130, 134, 0.25);
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(0.75rem);
+    transition: all 0.2s linear, margin-right 0s;
+}
+
+.saasify-scroll-top.progress-done {
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.saasify-scroll-top-icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: var(--tj-color-gradient-3);
+}
+
+.saasify-scroll-top > svg path {
+    fill: none;
+}
+
+.saasify-scroll-top > svg.progress-circle path {
+    stroke: var(--tj-color-gradient-3);
+    stroke-width: 4;
+    box-sizing: border-box;
+    transition: all 200ms linear;
+}
+
+@media (min-width: 1px) {
+    .saasify-scroll-top.progress-done {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes letters-loading {
+    0%,
+    75%,
+    100% {
+        opacity: 0;
+        -webkit-transform: rotateY(-90deg);
+        transform: rotateY(-90deg);
+    }
+    25%,
+    50% {
+        opacity: 1;
+        -webkit-transform: rotateY(0deg);
+        transform: rotateY(0deg);
+    }
+}
+@keyframes letters-loading {
+    0%,
+    75%,
+    100% {
+        opacity: 0;
+        -webkit-transform: rotateY(-90deg);
+        transform: rotateY(-90deg);
+    }
+    25%,
+    50% {
+        opacity: 1;
+        -webkit-transform: rotateY(0deg);
+        transform: rotateY(0deg);
+    }
+}
+
+/* !END: Theme Scroll CSS */

@@ -1,0 +1,113 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Counter CSS
+----------------------------------------*/
+.tj-counter-section {
+    position: relative;
+    padding: 90px 0 60px;
+    overflow: hidden;
+    &::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        background: linear-gradient(
+            90deg,
+            var(--tj-color-gradient-1) 0%,
+            var(--tj-color-gradient-3) 100%,
+            var(--tj-color-gradient-2) 100%
+        );
+    }
+}
+.counter-content-box {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    text-align: center;
+    .counter-item {
+        border-right: 1px solid var(--tj-color-grey-6);
+        position: relative;
+        z-index: 3;
+        margin-bottom: 30px;
+        &:last-child {
+            border-right: none;
+        }
+        .tj-count {
+            color: var(--tj-color-common-white);
+            font-family: var(--tj-ff-heading);
+            font-weight: var(--tj-fw-bold);
+            letter-spacing: 4px;
+            font-size: 80px;
+        }
+        .sub-title {
+            font-size: 18px;
+            font-weight: var(--tj-fw-sbold);
+            color: var(--tj-color-common-white);
+            font-family: var(--tj-ff-heading);
+        }
+    }
+}
+
+.tj-counter-section-two {
+    padding: 60px 0;
+    background: var(--tj-color-grey-6);
+}
+.counter-content-box-two {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 40px 55px 25px;
+    position: relative;
+    &::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        border-radius: 8px;
+        background: linear-gradient(
+            90deg,
+            var(--tj-color-gradient-1) 0%,
+            var(--tj-color-gradient-3) 100%,
+            var(--tj-color-gradient-2) 100%
+        );
+    }
+    .counter-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+        position: relative;
+        z-index: 3;
+        .counter-icon {
+            position: relative;
+            top: 5px;
+            margin-right: 35px;
+            i {
+                font-size: 40px;
+                color: var(--tj-color-common-white);
+                position: absolute;
+                top: 55%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+        .tj-count {
+            color: var(--tj-color-common-white);
+            font-family: var(--tj-ff-heading);
+            font-weight: var(--tj-fw-bold);
+            letter-spacing: 4px;
+            font-size: 48px;
+        }
+        .sub-title {
+            font-size: 18px;
+            font-weight: var(--tj-fw-sbold);
+            color: var(--tj-color-common-white);
+            font-family: var(--tj-ff-heading);
+        }
+    }
+}
+
+/* !END: Counter CSS */

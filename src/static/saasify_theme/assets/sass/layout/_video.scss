@@ -1,0 +1,74 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Video CSS
+----------------------------------------*/
+.tj-video-section {
+    background: url(../images/banner/bg-3.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 290px 0;
+    position: relative;
+    &::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(0deg, rgba(19, 0, 49, 0.7) 0%, rgba(19, 0, 49, 0.01) 100%);
+    }
+}
+
+.tj-video-area {
+    .video-icon {
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        padding: 10px;
+        border-radius: 50%;
+        display: inline-block;
+        position: relative;
+        &::before {
+            position: absolute;
+            content: "";
+            width: 120px;
+            height: 120px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+        }
+    }
+    .popup-videos-button {
+        background: linear-gradient(
+            90deg,
+            var(--tj-color-gradient-1) 0%,
+            var(--tj-color-gradient-3) 100%,
+            var(--tj-color-gradient-2) 100%
+        );
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+        border-radius: 50%;
+        display: inline-block;
+        text-align: center;
+        position: relative;
+        z-index: 3;
+    }
+}
+
+.tj-video-area .pulse {
+    animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+    0% {
+        box-shadow: 0 0 0 0px rgba(255, 255, 255, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+    }
+}
+
+/* !END: Video CSS */

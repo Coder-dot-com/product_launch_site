@@ -1,0 +1,44 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Progress CSS
+----------------------------------------*/
+.tj-progress-section {
+    padding-top: 160px;
+    padding-bottom: 205px;
+    background: var(--tj-color-grey-6);
+    position: relative;
+    .progress-shape {
+        position: absolute;
+        left: 0;
+        top: 60%;
+        transform: translateY(-50%);
+    }
+}
+.progress-content-one {
+    margin-bottom: 80px;
+    .desc {
+        margin-bottom: 35px;
+        max-width: 550px;
+    }
+}
+.progress-group-image {
+    position: relative;
+    right: -100px;
+    .group-2 {
+        position: absolute;
+        top: -10%;
+        right: -12%;
+        max-width: 260px;
+        width: 100%;
+    }
+    .group-3 {
+        z-index: 3;
+        position: absolute;
+        bottom: -20%;
+        left: -5%;
+        max-width: 65%;
+        width: 100%;
+    }
+}
+/* !END: Progress CSS */

@@ -1,0 +1,87 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Breadcrumb CSS
+----------------------------------------*/
+.breadcrumb-wrapper {
+    padding-top: 270px;
+    padding-bottom: 115px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    &::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: linear-gradient(
+            90deg,
+            var(--tj-color-gradient-1) 0%,
+            var(--tj-color-gradient-3) 100%,
+            var(--tj-color-gradient-2) 100%
+        );
+    }
+}
+.breadcrumb-content-area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 9;
+    .breadcrumb-heading {
+        margin-bottom: 35px;
+        .sub-title {
+            color: var(--tj-color-common-white);
+            font-weight: var(--tj-fw-bold);
+            font-size: 20px;
+            display: block;
+            margin-bottom: 20px;
+        }
+        .breadcrumb-title {
+            color: var(--tj-color-common-white);
+            display: block;
+            margin-bottom: 0;
+            font-size: 50px;
+            line-height: 60px;
+            max-width: 630px;
+        }
+    }
+    .breadcrumb-link {
+        span {
+            color: var(--tj-color-common-white);
+            font-size: 22px;
+        }
+        i {
+            color: var(--tj-color-common-white);
+            padding-left: 20px;
+            padding-right: 20px;
+            font-size: 22px;
+        }
+        a {
+            span {
+                color: var(--tj-color-common-white);
+                transition: 0.4s;
+                position: relative;
+                &::before {
+                    position: absolute;
+                    content: "";
+                    width: 0;
+                    height: 1px;
+                    bottom: 0;
+                    left: 0;
+                    background: var(--tj-color-common-white);
+                }
+                &:hover {
+                    &::before {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+/* !END: Breadcrumb CSS */

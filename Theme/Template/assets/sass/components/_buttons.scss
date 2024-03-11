@@ -1,0 +1,288 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Button CSS
+----------------------------------------*/
+.tj-primary-btn {
+    color: var(--tj-color-common-white);
+    font-weight: var(--tj-fw-sbold);
+    font-size: 15px;
+    padding: 15px 30px;
+    border-radius: 58px;
+    overflow: hidden;
+    font-family: var(--tj-ff-body);
+    background: transparent;
+    @include transition(all 0.4s ease-in-out 0s);
+    position: relative;
+    z-index: 9;
+    display: inline-block;
+    outline: none;
+    box-shadow: 15px 9px 30px 0px rgba(117, 77, 233, 0.2);
+    &::after {
+        position: absolute;
+        content: " ";
+        z-index: -1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            90deg,
+            var(--tj-color-gradient-1) 0%,
+            var(--tj-color-gradient-3) 100%,
+            var(--tj-color-gradient-2) 100%
+        );
+        @include transition(all 0.4s ease-in-out 0s);
+    }
+    &:hover {
+        background: transparent;
+        color: var(--tj-color-common-white);
+        &::after {
+            -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+            color: var(--tj-color-common-white);
+        }
+    }
+}
+
+.tj-secondary-btn {
+    font-weight: var(--tj-fw-sbold);
+    font-size: 15px;
+    padding: 14px 30px;
+    color: var(--tj-color-gradient-1);
+    border-radius: 58px;
+    border: 1.5px solid var(--tj-color-gradient-1);
+    overflow: hidden;
+    font-family: var(--tj-ff-body);
+    background: transparent;
+    @include transition(all 0.4s ease-in-out 0s);
+    position: relative;
+    display: inline-block;
+    outline: none;
+    &::after {
+        position: absolute;
+        content: " ";
+        z-index: -1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        @include transition(all 0.4s ease-in-out 0s);
+    }
+    &:hover {
+        border-color: transparent;
+        color: var(--tj-color-common-white);
+        &::after {
+            -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+            color: var(--tj-color-common-white);
+            background: linear-gradient(
+                90deg,
+                var(--tj-color-gradient-1) 0%,
+                var(--tj-color-gradient-3) 100%,
+                var(--tj-color-gradient-2) 100%
+            );
+        }
+    }
+}
+
+.tj-transparent-btn {
+    font-weight: var(--tj-fw-sbold);
+    font-size: 15px;
+    padding: 17px 30px;
+    color: var(--tj-color-common-black);
+    border-radius: 58px;
+    border: 2px solid var(--tj-color-light-6);
+    box-shadow: 15px 9px 30px 0px rgba(117, 77, 233, 0.15);
+    overflow: hidden;
+    font-family: var(--tj-ff-body);
+    background: transparent;
+    @include transition(all 0.4s ease-in-out 0s);
+    position: relative;
+    display: inline-block;
+    outline: none;
+    &::after {
+        position: absolute;
+        content: " ";
+        z-index: -1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        @include transition(all 0.4s ease-in-out 0s);
+    }
+    &:hover {
+        border-color: transparent;
+        color: var(--tj-color-common-white);
+        &::after {
+            -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+            color: var(--tj-color-common-white);
+            background: linear-gradient(
+                90deg,
+                var(--tj-color-gradient-1) 0%,
+                var(--tj-color-gradient-3) 100%,
+                var(--tj-color-gradient-2) 100%
+            );
+        }
+    }
+}
+
+.tj-white-btn {
+    color: var(--gradients-color-gd-1);
+    font-weight: var(--tj-fw-sbold);
+    font-size: 15px;
+    padding: 17px 30px;
+    border-radius: 58px;
+    overflow: hidden;
+    font-family: var(--tj-ff-body);
+    background: transparent;
+    @include transition(all 0.4s ease-in-out 0s);
+    position: relative;
+    display: inline-block;
+    outline: none;
+    &::after {
+        position: absolute;
+        content: " ";
+        z-index: -1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--tj-color-common-white);
+        @include transition(all 0.4s ease-in-out 0s);
+    }
+    &:hover {
+        background: transparent;
+        color: var(--tj-color-common-white);
+        background: var(--tj-color-gradient-3);
+        &::after {
+            -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+            color: var(--tj-color-common-white);
+        }
+    }
+}
+
+.tj-black-btn {
+    font-weight: var(--tj-fw-sbold);
+    font-size: 15px;
+    padding: 15px 30px;
+    color: var(--tj-color-gradient-1);
+    border-radius: 5px;
+    border: 1.5px solid var(--tj-color-gradient-1);
+    overflow: hidden;
+    font-family: var(--tj-ff-body);
+    background: transparent;
+    @include transition(all 0.4s ease-in-out 0s);
+    position: relative;
+    display: inline-block;
+    outline: none;
+    z-index: 3;
+    &::after {
+        position: absolute;
+        content: " ";
+        z-index: -1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        @include transition(all 0.4s ease-in-out 0s);
+    }
+    &:hover {
+        border-color: transparent;
+        color: var(--tj-color-common-white);
+        &::after {
+            -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+            color: var(--tj-color-common-white);
+            background: linear-gradient(
+                90deg,
+                var(--tj-color-gradient-1) 0%,
+                var(--tj-color-gradient-3) 100%,
+                var(--tj-color-gradient-2) 100%
+            );
+        }
+    }
+}
+
+.tj-primary-black-btn {
+    color: var(--tj-color-common-white);
+    font-weight: var(--tj-fw-sbold);
+    font-size: 15px;
+    padding: 15px 30px;
+    border-radius: 5px;
+    overflow: hidden;
+    font-family: var(--tj-ff-body);
+    background: transparent;
+    @include transition(all 0.4s ease-in-out 0s);
+    position: relative;
+    display: inline-block;
+    outline: none;
+    &::after {
+        position: absolute;
+        content: " ";
+        z-index: -1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--tj-color-common-black);
+        @include transition(all 0.4s ease-in-out 0s);
+    }
+    &:hover {
+        background: transparent;
+        color: var(--tj-color-common-white);
+        background: var(--tj-color-gradient-3);
+        &::after {
+            -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+            color: var(--tj-color-common-white);
+        }
+    }
+}
+
+.tj-primary-white-btn {
+    color: var(--tj-color-common-white);
+    font-weight: var(--tj-fw-sbold);
+    font-size: 15px;
+    padding: 17px 30px;
+    border-radius: 5px;
+    overflow: hidden;
+    font-family: var(--tj-ff-body);
+    background: transparent;
+    @include transition(all 0.4s ease-in-out 0s);
+    position: relative;
+    display: inline-block;
+    outline: none;
+    &::after {
+        position: absolute;
+        content: " ";
+        z-index: -1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--tj-color-common-black);
+        @include transition(all 0.4s ease-in-out 0s);
+    }
+    &:hover {
+        background: transparent;
+        color: var(--tj-color-common-black);
+        background: var(--tj-color-common-white);
+        &::after {
+            -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+            color: var(--tj-color-common-white);
+        }
+    }
+}
+
+.contact-btn {
+    width: 100%;
+}
+
+/* !END: Button CSS */

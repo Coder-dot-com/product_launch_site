@@ -1,0 +1,103 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Slider CSS
+----------------------------------------*/
+.tj-slider-section {
+    padding-top: 220px;
+    padding-bottom: 310px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    .swiper-pagination {
+        width: auto;
+        right: 80px;
+        left: 50%;
+        bottom: 0;
+        transform: translate(-50%);
+    }
+    .swiper-pagination .swiper-pagination-bullet {
+        display: inline-block;
+    }
+    .swiper-pagination .swiper-pagination-bullet:last-child {
+        margin-bottom: 0;
+    }
+    .swiper-pagination-bullet {
+        background: var(--tj-color-light-2);
+        width: 8px;
+        height: 5px;
+        cursor: pointer;
+        border-radius: 10px;
+        transition: 0.4s;
+        -webkit-transition: 0.4s;
+        -moz-transition: 0.4s;
+    }
+    .swiper-pagination-bullet-active {
+        background: var(--tj-color-light-1);
+        background: var(--tj-color-light-1);
+        width: 21px;
+        height: 5px;
+        position: relative;
+    }
+}
+
+.slider-box {
+    position: relative;
+    top: 85px;
+    .slider-shape {
+        position: absolute;
+        right: 70px;
+        top: 10px;
+    }
+    .active-text {
+        border-radius: 55px;
+        background: var(--tj-color-light-7);
+        color: var(--tj-color-theme-secondary);
+        padding: 10px 10px;
+        margin-left: 100px;
+        display: inline-block;
+        margin-bottom: 30px;
+        position: relative;
+        z-index: 9;
+        i {
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            font-size: 14px;
+            text-align: center;
+            border-radius: 50%;
+            background: var(--tj-color-extra-3);
+            color: var(--tj-color-common-white);
+            display: inline-block;
+        }
+    }
+}
+
+.slider-area {
+    box-shadow: -16px 16px 100px 0px rgba(190, 172, 245, 0.3);
+    border-radius: 10px;
+    background: var(--tj-color-common-white);
+    padding: 10px 10px;
+    max-width: 650px;
+    max-height: 385px;
+    height: 100%;
+    width: 100%;
+}
+
+.slider-content-area {
+    padding-left: 23.5%;
+    .desc {
+        max-width: 700px;
+        margin-bottom: 35px;
+    }
+}
+
+.slider-item {
+    margin-bottom: 60px;
+    img {
+        width: 100%;
+    }
+}
+
+/* !END: Slider CSS */

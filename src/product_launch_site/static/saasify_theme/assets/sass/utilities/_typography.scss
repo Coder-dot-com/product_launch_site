@@ -1,0 +1,39 @@
+// Font URL
+$font-url: "https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,500;6..12,600;6..12,700;6..12,800;6..12,900&family=Readex+Pro:wght@200;300;400;500;600;700&display=swap";
+//Font Family
+$font-family: (
+    ff: (
+        body: "'Nunito Sans', sans-serif",
+        heading: "'Readex Pro', sans-serif",
+        fontawesome: '"Font Awesome 6 Pro"',
+    ),
+);
+
+// Font Weight
+$font-scale: (
+    fw: (
+        normal: normal,
+        thin: 100,
+        elight: 200,
+        light: 300,
+        regular: 400,
+        medium: 500,
+        sbold: 600,
+        bold: 700,
+        ebold: 800,
+        black: 900,
+    ),
+);
+
+// Font Size
+$font-size: (
+    fs: (
+        body: 16px,
+        h1: 70px,
+        h2: 50px,
+        h3: 40px,
+        h4: 30px,
+        h5: 22px,
+        h6: 18px,
+    ),
+);

@@ -1,0 +1,282 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Price CSS
+----------------------------------------*/
+.tj-price-section {
+    background: var(--tj-color-grey-6);
+    padding-top: 110px;
+    padding-bottom: 90px;
+    position: relative;
+    overflow: hidden;
+    .price-overly {
+        position: absolute;
+        top: -35%;
+        right: 0;
+    }
+    .price-shape1 {
+        position: absolute;
+        top: 30%;
+        right: 0;
+        transform: translateY(-50%);
+    }
+    .price-shape2 {
+        position: absolute;
+        top: 30%;
+        left: -30px;
+        transform: translateY(-50%);
+    }
+    .container {
+        position: relative;
+        .price-shape {
+            position: absolute;
+            top: -30px;
+            right: -50px;
+        }
+    }
+    .tj-sec-heading {
+        margin-bottom: 85px;
+        .title {
+            max-width: 550px;
+            margin: auto;
+            margin-bottom: 15px;
+        }
+        .desc {
+            margin-bottom: 0;
+            max-width: 750px;
+            margin: auto;
+        }
+    }
+}
+
+.tj-price-item {
+    border-radius: 12px;
+    border: 2px solid var(--tj-color-light-6);
+    padding-bottom: 35px;
+    transform: translateY(0);
+    @include transition(all 0.4s ease-in-out 0s);
+    margin-top: 0;
+    margin-bottom: 30px;
+    background: var(--tj-color-common-white);
+    position: relative;
+    z-index: 3;
+    .price-top-header {
+        border-radius: 8px 8px 0 0;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 2px solid var(--tj-color-light-6);
+        background: transparent;
+        padding: 40px;
+        position: relative;
+        @include transition(all 0.4s ease-in-out 0s);
+        &::before {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            border-radius: 8px 8px 0 0;
+            z-index: -1;
+            opacity: 0;
+            visibility: hidden;
+            background: linear-gradient(
+                90deg,
+                var(--tj-color-gradient-1) 0%,
+                var(--tj-color-gradient-3) 100%,
+                var(--tj-color-gradient-2) 100%
+            );
+        }
+        .price-content {
+            .title {
+                display: block;
+                margin-bottom: 0;
+            }
+        }
+        .price-icon {
+            i {
+                font-size: 45px;
+                border: 1.5px solid var(--gradients-color-gd-1, #926efb);
+                width: 80px;
+                height: 80px;
+                line-height: 90px;
+                border-radius: 10px;
+                text-align: center;
+                display: inline-block;
+            }
+        }
+        .price {
+            font-size: 30px;
+            font-family: var(--tj-ff-heading);
+            color: var(--tj-color-heading-primary);
+            font-weight: var(--tj-fw-sbold);
+        }
+        .month {
+            color: var(--tj-color-grey-1);
+            font-size: 16px;
+        }
+    }
+    .price-list {
+        padding: 35px 40px 45px;
+        ul {
+            li {
+                margin-bottom: 15px;
+                position: relative;
+                padding-left: 25px;
+                i {
+                    margin-right: 5px;
+                    position: absolute;
+                    top: 60%;
+                    transform: translateY(-50%);
+                    left: 0;
+                    color: var(--tj-color-heading-primary);
+                }
+            }
+        }
+    }
+    &:hover {
+        margin-top: -25px;
+        border: 2px solid var(--tj-color-gradient-1);
+        .price-top-header {
+            border-bottom: 2px solid var(--tj-color-gradient-1);
+        }
+    }
+    &.price-active {
+        margin-top: -25px;
+        border: 2px solid var(--tj-color-gradient-1);
+        .price-top-header {
+            &::before {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+        .price-content {
+            .title {
+                color: var(--tj-color-common-white);
+            }
+        }
+        .price {
+            color: var(--tj-color-common-white);
+        }
+        .month {
+            color: var(--tj-color-common-white);
+        }
+        .price-icon {
+            i {
+                border: 1.5px solid var(--tj-color-common-white);
+                color: var(--tj-color-common-white);
+            }
+        }
+    }
+}
+
+.tj-price-section-two {
+    background: var(--tj-color-grey-6);
+    padding-bottom: 90px;
+    position: relative;
+    .tj-sec-heading-two {
+        margin-bottom: 85px;
+        .title {
+            max-width: 550px;
+            margin: auto;
+            margin-bottom: 15px;
+        }
+        .desc {
+            margin-bottom: 0;
+            max-width: 750px;
+            margin: auto;
+        }
+    }
+}
+
+.tj-price-item-two {
+    border-radius: 12px;
+    border: 1px solid var(--tj-color-light-6);
+    padding-bottom: 35px;
+    @include transition(all 0.4s ease-in-out 0s);
+    margin-bottom: 30px;
+    margin-top: 0;
+    position: relative;
+    z-index: 3;
+    .price-top-header {
+        border-radius: 8px 8px 0 0;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--tj-color-light-6);
+        background: transparent;
+        padding: 40px;
+        .price-content {
+            .title {
+                display: block;
+                margin-bottom: 0;
+                color: var(--tj-color-common-black-3);
+            }
+        }
+        .price-icon {
+            i {
+                font-size: 45px;
+                border: 1.5px solid var(--tj-color-light-6);
+                color: var(--tj-color-gradient-2);
+                width: 80px;
+                height: 80px;
+                line-height: 90px;
+                border-radius: 10px;
+                text-align: center;
+                display: inline-block;
+            }
+        }
+        .price {
+            font-size: 30px;
+            font-family: var(--tj-ff-heading);
+            color: var(--tj-color-common-black-3);
+            font-weight: var(--tj-fw-sbold);
+        }
+        .month {
+            color: var(--tj-color-common-black-3);
+            font-size: 16px;
+        }
+    }
+    .price-list {
+        padding: 35px 40px 35px;
+        ul {
+            li {
+                margin-bottom: 15px;
+                position: relative;
+                padding-left: 25px;
+                i {
+                    margin-right: 5px;
+                    position: absolute;
+                    top: 60%;
+                    transform: translateY(-50%);
+                    left: 0;
+                    color: var(--tj-color-extra-3);
+                }
+            }
+        }
+    }
+    &.active-price,
+    &:hover {
+        border: 1px solid var(--tj-color-gradient-1);
+        margin-top: -25px;
+        .price-top-header {
+            border-bottom: 1px solid var(--tj-color-gradient-1);
+        }
+        .price-icon {
+            i {
+                border-color: transparent;
+                background-color: var(--tj-color-common-black-3);
+                color: var(--tj-color-common-white);
+            }
+        }
+    }
+}
+
+.price-style-four {
+    padding-top: 120px;
+}
+
+/* !END: Price CSS */

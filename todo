@@ -1,7 +1,7 @@
-1. Fix design of blog page
-    -on mobile hide sticky subscribe side bar and have one at top and bottom of page
+1. Buy and render new template, delete all old templates
 
-2.. optimize blog for seo
+
+2. optimize blog for seo
     -sitemaps set up properly
     -auto ping google to recrawl webpage
 
@@ -10,3 +10,10 @@ focussing on building an audience via blog and email capture first
     then free offering
     iterate and improve
     then paid offering
+
+2.5 upodate privacy policy and t and cs
+
+3. Security ensure everything is secure ready for deployment
+    -change default admin url
+
+4. Deploy
