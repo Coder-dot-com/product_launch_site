@@ -68,7 +68,7 @@ class BlogListingPage(RoutablePageMixin, Page):
         """Adding custom stuff to our context."""
         context = super().get_context(request, *args, **kwargs)
         # Get all posts
-        all_posts = BlogPage.objects.live().public()
+        all_posts = BlogPage.objects.live().public().order_by('-date')
 
         page = request.GET.get("page")
         posts = all_posts

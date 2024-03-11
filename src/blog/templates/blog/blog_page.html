@@ -25,7 +25,8 @@
                         {% endfor %}
 
                         <hr>
-                        <div  class="col-12 col-md-10 col-lg-10 mx-auto my-3 p-4 bg-light rounded">
+
+                        <div  class="col-12 col-md-10 col-lg-10 mx-auto my-3 p-4 bg-light rounded hide_desktop">
                             <ol>
                                 <i class="row my-3">
                                     Table of contents
@@ -35,6 +36,9 @@
                                 {% endfor %}
                             </ol>
                         </div>
+
+                    
+
                         <div class="">
 
                             {% if page.title_image %}
@@ -138,137 +142,20 @@
 
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="tj-main-sidebar">
-                            <div class="tj-sidebar-widget sidebar-shape-border sidebar-shape-border1">
-                                <div class="sidebar-search">
-                                    <form action="#">
-                                        <input
-                                            type="text"
-                                            class="form-control"
-                                            name="search"
-                                            id="search"
-                                            placeholder="Search"
-                                        />
-                                        <button type="submit" value="search">
-                                            <i class="fa-light fa-magnifying-glass"></i>
-                                        </button>
-                                    </form>
-                                </div>
-                                <div class="sidebar-shape">
-                                    <span class="border-shadow shadow-1"></span>
-                                    <span class="border-shadow shadow-2"></span>
-                                </div>
-                            </div>
-                            <div class="tj-sidebar-widget sidebar-shape-border">
-                                <div class="sidebar-recent-post">
-                                    <h5 class="title">Latest Post</h5>
-                                    <div class="single-post d-flex align-items-center">
-                                        <div class="post-image">
-                                            <a href="blog-details.html">
-                                                <img src="{% static 'saasify_theme/assets//images/blog/blog-thumb.jpg' %}" alt="Blog"
-                                            /></a>
-                                        </div>
-                                        <div class="post-header">
-                                            <h6 class="title-link">
-                                                <a href="#"> Best Practices and common Pitfalls</a>
-                                            </h6>
-                                            <span class="sub-title"> Dec 17, 2023</span>
-                                        </div>
-                                    </div>
-                                    <div class="single-post d-flex align-items-center">
-                                        <div class="post-image">
-                                            <a href="blog-details.html">
-                                                <img src="{% static 'saasify_theme/assets//images/blog/blog-thumb1.jpg' %}" alt="Blog"
-                                            /></a>
-                                        </div>
-                                        <div class="post-header">
-                                            <h6 class="title-link">
-                                                <a href="#"> What customer service provide</a>
-                                            </h6>
-                                            <span class="sub-title"> Jan 09, 2023</span>
-                                        </div>
-                                    </div>
-                                    <div class="single-post d-flex align-items-center">
-                                        <div class="post-image">
-                                            <a href="blog-details.html">
-                                                <img src="{% static 'saasify_theme/assets//images/blog/blog-thumb2.jpg' %}" alt="Blog"
-                                            /></a>
-                                        </div>
-                                        <div class="post-header">
-                                            <h6 class="title-link">
-                                                <a href="#"> Powerful AI Model to quantum</a>
-                                            </h6>
-                                            <span class="sub-title"> Mar 24, 2023</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="sidebar-shape">
-                                    <span class="border-shadow shadow-1"></span>
-                                    <span class="border-shadow shadow-2"></span>
-                                </div>
-                            </div>
-                            <div class="tj-sidebar-widget sidebar-shape-border">
-                                <div class="sidebar-catagory">
-                                    <h5 class="title">All Catagory</h5>
-                                    <ul class="list-gap">
-                                        <li>
-                                            <a href="#"
-                                                >Saas Landing page
-                                                <span> <i class="fa-light fa-angle-right"></i></span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#"
-                                                >Saas Landing
-                                                <span> <i class="fa-light fa-angle-right"></i></span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#"
-                                                >Software
-                                                <span> <i class="fa-light fa-angle-right"></i></span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#"
-                                                >Saas Software
-                                                <span> <i class="fa-light fa-angle-right"></i></span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#"
-                                                >New Saas Software
-                                                <span> <i class="fa-light fa-angle-right"></i></span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="sidebar-shape">
-                                    <span class="border-shadow shadow-1"></span>
-                                    <span class="border-shadow shadow-2"></span>
-                                </div>
-                            </div>
-                            <div class="tj-sidebar-widget sidebar-shape-border">
-                                <div class="sidebar-tags">
-                                    <h5 class="title">All Tags</h5>
-                                    <div class="tagcloud">
-                                        <a href="#"> Corporate </a>
-                                        <a href="#"> Business </a>
-                                        <a href="#"> Template </a>
-                                        <a href="#"> Saas Landing </a>
-                                        <a href="#"> Delivery</a>
-                                        <a href="#"> Saas Software </a>
-                                        <a href="#"> Design </a>
-                                        <a href="#">Development</a>
-                                    </div>
-                                </div>
-                                <div class="sidebar-shape">
-                                    <span class="border-shadow shadow-1"></span>
-                                    <span class="border-shadow shadow-2"></span>
-                                </div>
-                            </div>
+                    <div class="col-lg-4 hide_non_desktop">
+                        <div  class="col-12 col-md-10 col-lg-10 mx-auto my-3 p-4 bg-light rounded stuck" >
+                            <ol>
+                                <i class="row my-3">
+                                    Table of contents
+                                </i>
+                                {% for block in page.content %}
+                                    <li class="m-1"><a href="#{{ block.id }}">{{ block.value.header }}</a></li>
+
+                                   
+                                {% endfor %}
+                            </ol>
                         </div>
+                     
                     </div>
                 </div>
             </div>
@@ -317,5 +204,36 @@
             </div>
         </section>
         <!--========== Subcribe Section End ==============-->
+
+
+<style>
+
+    @media screen and (min-width: 992px) {
+        .hide_desktop {
+          visibility: hidden;
+          clear: both;
+          float: left;
+          margin: 10px auto 5px 20px;
+          width: 28%;
+          display: none;
+        }
+      }
+    @media screen and (max-width: 992px) {
+        .hide_non_desktop {
+          visibility: hidden;
+          clear: both;
+          float: left;
+          margin: 10px auto 5px 20px;
+          width: 28%;
+          display: none;
+        }
+      }
+
+      .stuck {
+        position: sticky;
+        top:0;
+        overflow-y: scroll;
+      }
+</style>
 
 {% endblock content %}
