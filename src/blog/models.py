@@ -228,7 +228,7 @@ class BlogPage(Page):
         try:
             categories = self.categories.all().values_list('id', flat=True)
             return BlogPage.objects.live().public().exclude().filter(
-                id__gt=self.id,categories__in=categories).order_by("id")[0:5]
+                id__gt=self.id,categories__in=categories).order_by("id")[0:4]
         except IndexError:
             return None
         except AttributeError:

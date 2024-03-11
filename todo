@@ -1,7 +1,6 @@
 1. Buy and render new template, delete all old templates
 
-    -render blog page
-        -previous blog and also 4 in same categories
+    sidebar
 
     -subscribe cta at bottom of page change it to an include as its used on homepage and blog pages
         -also update text

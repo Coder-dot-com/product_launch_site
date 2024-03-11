@@ -68,47 +68,74 @@
                                 <h3><a id="{{ block.id }}">{{ block.value.header }}</a></h3>
                                 {{ block.value.content }}
                             </section>
-                            {% endfor %}    
+                            {% endfor %} 
 
-               
+
+
+                            {% if page.get_next_article %}
+                            <hr>
+                            <div class="p-2 next_post mt-5 mb-3" style="">
+                                <strong  class="text-muted" style="font-size:1.2rem;">
+                                    <i>
+                                        Next article:
+                                    </i>
+                                </strong>
+                                <br>
+                                <a href="{{page.get_next_article.url}}" class="m-1 text-dark">
+                                    <strong style="font-size:1.4rem;">
+                                        {{page.get_next_article.title}}
+                                    </strong>
+                                </a>
+                            </div>
+                        {% endif %}
+
+                        {% if page.get_previous_article %}
+                        <hr>
+                            <div class="p-2 previous_post mt-5 mb-3" style="">
+                                <strong  class="text-muted" style="font-size:1.2rem;">
+                                    <i>
+                                        Previous article:
+                                    </i>
+                                </strong>
+                                <br>
+                                <a href="{{page.get_previous_article.url}}" class="m-1 text-dark">
+                                    <strong style="font-size:1.4rem;">
+                                        {{page.get_previous_article.title}}
+                                    </strong>
+                                </a>
+                            </div>
+                        {% endif %}
+                     
+                            <hr>
+                            {% if page.get_5_next_in_same_category %}
                             <div class="tj-related-post my-5">
-                                <h3 class="title">You also might like:</h3>
+                                <h5 class="title"> If you enjoyed reading this article,
+                                    you might also like in the category {% for cat in page.categories.all %}{{cat}}{% endfor %}:</h5>
                                 <div class="row">
+
+                                    {% for page in page.get_5_next_in_same_category %}
                                     <div class="col-lg-6 col-md-6">
                                         <div class="related-content-area">
+                                            {% if page.title_image %}
                                             <div class="related-image">
-                                                <img src="{% static 'saasify_theme/assets//images/blog/blog-10.jpg' %}" alt="Blog" />
+                                                <img src="{{page.title_image.url}}" alt="" />
                                             </div>
+                                            {% endif %}
                                             <div class="related-content">
                                                 <h5 class="title-link">
-                                                    <a href="#"> Powerful AI Model Switches to quantum</a>
+                                                    <a href="{{page.url}}">{{page.title}}
+                                                    </a>
                                                 </h5>
-                                                <p class="desc">
-                                                    Contrary to popular belief, Lorem Ipsum is not simply random text.
-                                                    It has roots in a piece of classical Latin literature from 45 BC
-                                                </p>
+                                             
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="related-content-area">
-                                            <div class="related-image">
-                                                <img src="{% static 'saasify_theme/assets//images/blog/blog-11.jpg' %}" alt="Blog" />
-                                            </div>
-                                            <div class="related-content">
-                                                <h5 class="title-link">
-                                                    <a href="#"> What customer service processes provide</a>
-                                                </h5>
-                                                <p>
-                                                    Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is
-                                                    therefore always free from repetition, injected humour
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    {% endfor %}
+                            
                                 </div>
                             </div>
-               
+                            {% endif %}
+
                         </div>
                     </div>
                     <div class="col-lg-4">
