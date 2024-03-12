@@ -9,7 +9,7 @@
         <meta name="description" content="" />
 
         <!-- Site Title -->
-        <title>{{site.site_name}} - With you from idea to launch and beyond</title>
+        
         <!-- Favicon -->
         <link rel="apple-touch-icon" href="{% static 'saasify_theme/assets/images/fav.svg' %}" />
         <link rel="shortcut icon" type="image/x-icon" href="{% static 'saasify_theme/assets/images/fav.svg' %}" />
@@ -38,86 +38,3 @@
         <link rel="stylesheet" href="{% static 'saasify_theme/assets/css/responsive.css' %}" />
 
         <script src="https://unpkg.com/htmx.org@1.9.10"></script>
-    </head>
-    <body hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
-        <div id="tj-overlay-bg2" class="tj-overlay-canvas"></div>
-
-        <!-- preloader -->
-        {% comment %} <div id="loading">
-            <div id="loading-center">
-                <div id="loading-center-absolute">
-                    <div class="object" id="object_four"></div>
-                    <div class="object-1" id="object_three"></div>
-                    <div class="object-2" id="object_two"></div>
-                    <div class="object-3" id="object_one"></div>
-                </div>
-                <button class="closeLoader tj-primary-black-btn"><span>Cancel Preloader</span></button>
-            </div>
-        </div> {% endcomment %}
-        <!-- end: Preloader -->
-
-        <!--========== Mobile Menu Start ==============-->
-        <div class="tj-offcanvas-area">
-            <div class="tj-offcanvas-header d-flex align-items-center justify-content-between">
-                <div class="logo-area text-center">
-                    <a href="/"> <h4 class="text-light">{{site.site_name}} </h4>
-                    </a>
-                </div>
-                <div class="offcanvas-icon">
-                    <a id="canva_close" href="#">
-                        <i class="fa-light fa-xmark"></i>
-                    </a>
-                </div>
-            </div>
-            <!-- Canvas Mobile Menu start -->
-            <nav class="right_menu_togle mobile-navbar-menu d-lg-none" id="mobile-navbar-menu"></nav>
-            <!-- Canvas Menu end -->
-        </div>
-        <!--========== Mobile Menu End ==============-->
-
-        <!--========== Header Section Start ==============-->
-        <header class="tj-header-area" id="tj-header-sticky" style="position: absolute;">
-            <div class="container">
-                <div class="row">
-                    <div class="header-content-two">
-                        <div class="logo-area">
-                            <a href="/">
-                                <h4>{{site.site_name}} </h4>
-                            </a>
-                        </div>
-                        <!-- Mainmenu Start -->
-                        <div class="tj-main-menu d-lg-block d-none text-center" id="main-menu">
-                            <ul class="main-menu">
-                                <li class="">
-                                    
-                                    <a class="{% if request.path == "/" %} active{% endif %}" href="/"> Home</a>
-                                  
-                                </li>
-                         
-                              
-                                <li class="">
-                                    <a href="/blog"> Blog</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- Mainmenu Item End -->
-                        <div class="header-button-box d-lg-block d-none">
-                            {% comment %} <div class="tj-login-button header-button">
-                                <a class="tj-black-btn" href="contact.html"> Login </a>
-                            </div>
-                            <div class="tj-singup-button header-button">
-                                <a class="tj-primary-black-btn" href="contact.html"> Sing up</a>
-                            </div> {% endcomment %}
-                        </div>
-                        <div class="tj-canva-icon d-lg-none">
-                            <a class="canva_expander nav-menu-link menu-button" href="#">
-                                <span class="dot1"></span>
-                                <span class="dot2"></span>
-                                <span class="dot3"></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <!--========== Header Section End ==============-->
