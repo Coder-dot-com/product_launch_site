@@ -1,5 +1,6 @@
 1. handle email list signup
     -new app to manage email list signups
+    -handle banner with htmx
     -ability to unsubscribe
 
 
