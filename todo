@@ -1,23 +1,23 @@
-1. Buy and render new template, delete all old templates
+1. handle email list signup
+    -new app to manage email list signups
+    -ability to unsubscribe
 
-
-    -subscribe cta at bottom of page change it to an include as its used on homepage and blog pages
-        -also update text
 
 
 2. optimize blog for seo
     -sitemaps set up properly
     -auto ping google to recrawl webpage
+    -meta tags for google ....
+        https://developers.google.com/search/docs/crawling-indexing/special-tags
+        -make sure title and description are good
+        meta description (may have to add a new field to page model) and <title></title>
 
-
-focussing on building an audience via blog and email capture first
-    then free offering
-    iterate and improve
-    then paid offering
 
 2.5 upodate privacy policy and t and cs
 
 3. Security ensure everything is secure ready for deployment
     -change default admin url
+
+3.5. google analytics (create new google email)
 
 4. Deploy
