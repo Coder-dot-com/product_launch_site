@@ -25,14 +25,16 @@ def subscribe_email(request):
         context = {'form': form}
         return render(request, 'home_site/includes/subscribe_email.html', context=context)
 
-def unsubscribe(request):
+def unsubscribe_email(request):
     if request.method == "POST":
         form = EmailForm(request.POST)
         if form.is_valid():
             email = form.cleaned_data["email"]
             email_object = UserEmail.objects.filter(email=email)
             email_object.update(promo_consent=False)
+            return HttpResponse("<span class='text-center d-block'> Email unsubscribed! </span>")
+
     else:
         form = EmailForm()
         context = {'form': form}
-        return render(request, 'home_site/unsubscribe.html', context=context)
+        return render(request, 'unsubscribe.html', context=context)
