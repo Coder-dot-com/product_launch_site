@@ -57,7 +57,7 @@ START: Theme Default CSS
   --tj-color-common-black: #000000;
   --tj-color-common-black-2: #030303;
   --tj-color-common-black-3: #333333;
-  --tj-color-heading-primary: #4a326f;
+  --tj-color-heading-primary: #121212;
   --tj-color-gradient-1: #926efb;
   --tj-color-gradient-2: #4a56ab;
   --tj-color-gradient-3: #465bd7;
@@ -1070,7 +1070,7 @@ START: Hero CSS
 }
 
 .tj-hero-section-two {
-  padding-top: 235px;
+  padding-top: 5rem;
   padding-bottom: 80px;
   position: relative;
 }
