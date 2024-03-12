@@ -26,7 +26,25 @@ from wagtail.documents import urls as wagtaildocs_urls
 from django.views.generic.base import TemplateView #import TemplateView
 from . import views
 
+
+
+from django.contrib.sitemaps.views import sitemap
+from .sitemaps import StaticSitemap 
+
+from wagtail.admin import urls as wagtailadmin_urls
+from wagtail import urls as wagtail_urls
+from wagtail.documents import urls as wagtaildocs_urls
+from wagtail.contrib.sitemaps.sitemap_generator import Sitemap as wgsitemap
+
+sitemaps = {
+      'static':StaticSitemap, #add StaticSitemap to the dictionary
+      'wagtail': wgsitemap,
+}
+
+
 urlpatterns = [
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),  
+
     path('admin/', admin.site.urls),
 
     path("", views.home, name="home"),

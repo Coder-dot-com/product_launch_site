@@ -112,12 +112,12 @@ class BlogListingPage(RoutablePageMixin, Page):
     def get_sitemap_urls(self, request):
         # Uncomment to have no sitemap for this page
         # return []
-        sitemap = super().get_sitemap_urls(request)
+        sitemap = []
         
         categories = BlogCategory.objects.all()
         sitemap.append(
                 {
-                    "location": self.full_url + self.reverse_subpage("category_view", kwargs={'cat_slug': 'all'}),
+                    "location": self.full_url + 'blog',
                     "lastmod": (self.last_published_at or self.latest_revision_created_at),
                     "priority": 0.6,
                     'protocol': 'https',
@@ -236,7 +236,16 @@ class BlogPage(Page):
 
 
 
-
+    def get_sitemap_urls(self, request=None):
+        return [
+            {
+                "location": self.get_full_url(request),
+                "priority": 0.6,
+                # fall back on latest_revision_created_at if last_published_at is null
+                # (for backwards compatibility from before last_published_at was added)
+                "lastmod": (self.last_published_at or self.latest_revision_created_at),
+            }
+        ]
 
 
 

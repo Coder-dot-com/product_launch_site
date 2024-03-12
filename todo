@@ -1,10 +1,6 @@
 
 2. optimize blog for seo
-focus on blog_page
--meta tags for google ....
-https://developers.google.com/search/docs/crawling-indexing/special-tags
-meta description (may have to add a new field to page model) and <title></title>
--sitemaps set up properly
+
 
 -meta tags for site ownership/analytics etc... from site settings
 
