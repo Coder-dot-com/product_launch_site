@@ -25,40 +25,49 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="hero-middle-area">
-                            <div class="hero-input-form">
-                                <div class="hero-input">
-                                    <input
-                                        type="email"
-                                        id="mail"
-                                        name="mail"
-                                        placeholder="Enter your email address"
-                                        required=""
-                                    />
-                                </div>
-                                <div class="tj-hero-button">
-                                    <button class="tj-primary-btn" type="submit" value="submit">
-                                        Signup to email list
-                                    </button>
+                        <form 
+                        hx-post="{% url 'subscribe_email' %}"
+                        hx-swap="outerHTML"
+                        >
+                            <div class="hero-middle-area">
+                                <div class="hero-input-form">
 
-                                    <a href="/blog">
-                                        
-                                        <button class="tj-secondary-btn" href="/blog">
-                                            View blog
-                                        </button>
-                                    </a>
+                                        <div class="hero-input">
+
+                            
+                                            <input
+                                                type="email"
+                                                id="mail"
+                                                name="email"
+                                                placeholder="Enter your email address"
+                                                required=""
+                                            />
+                                        </div>
+                                        <div class="tj-hero-button">
+                                            <button class="tj-primary-btn" type="submit" value="submit">
+                                                Signup to email list
+                                            </button>
+
+                                            <a href="/blog">
+                                                
+                                                <button class="tj-secondary-btn" href="/blog">
+                                                    View blog
+                                                </button>
+                                            </a>
+                                        </div>
+
+
+                                </div>
+                                <div class="header-list text-center">
+                                    <ul class="list-gap">
+                                        <li><i class="flaticon-checkmark"></i> Unsubscribe at any time</li>
+                                        <!-- <li><i class="flaticon-checkmark"></i> 30 day free trial</li> -->
+                                    </ul>
                                 </div>
                             </div>
-                            <div class="header-list text-center">
-                                <ul class="list-gap">
-                                    <li><i class="flaticon-checkmark"></i> Unsubscribe at any time</li>
-                                    <!-- <li><i class="flaticon-checkmark"></i> 30 day free trial</li> -->
-                                </ul>
-                            </div>
-                        </div>
-                        {% comment %} <div class="hero-image shake-y text-center">
-                            <img src="{% static 'saasify_theme/assets/images/banner/hero1.png' %}" alt="Image" />
-                        </div> {% endcomment %}
+
+                        </form>
+                    
                     </div>
                 </div>
             </div>

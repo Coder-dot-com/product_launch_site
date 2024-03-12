@@ -36,8 +36,10 @@
         <link rel="stylesheet" href="{% static 'saasify_theme/assets/css/main.css' %}" />
         <!-- Responsive css -->
         <link rel="stylesheet" href="{% static 'saasify_theme/assets/css/responsive.css' %}" />
+
+        <script src="https://unpkg.com/htmx.org@1.9.10"></script>
     </head>
-    <body>
+    <body hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
         <div id="tj-overlay-bg2" class="tj-overlay-canvas"></div>
 
         <!-- preloader -->

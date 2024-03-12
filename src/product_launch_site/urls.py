@@ -32,6 +32,7 @@ urlpatterns = [
     path("", views.home, name="home"),
     
     re_path("robots.txt\/?$",TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),  #add the robots.txt file
+    path('emails/', include('emails.urls')),
 
     
     #wagtail keep at end due to wildcard
