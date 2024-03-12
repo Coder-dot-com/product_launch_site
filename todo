@@ -1,15 +1,18 @@
-1. handle email list signup
-
-
-
 
 2. optimize blog for seo
-    -sitemaps set up properly
-    -auto ping google to recrawl webpage
-    -meta tags for google ....
-        https://developers.google.com/search/docs/crawling-indexing/special-tags
-        -make sure title and description are good
-        meta description (may have to add a new field to page model) and <title></title>
+-meta tags for google ....
+https://developers.google.com/search/docs/crawling-indexing/special-tags
+-make sure title and description are good
+meta description (may have to add a new field to page model) and <title></title>
+-sitemaps set up properly
+
+-meta tags for site ownership/analytics etc... from site settings
+
+
+-then deploy to AWS  and write articles
+
+-auto ping google to recrawl webpage
+
 
 
 2.5 upodate privacy policy and t and cs

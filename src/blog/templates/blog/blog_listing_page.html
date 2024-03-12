@@ -12,7 +12,13 @@
                     <div class="col-lg-12">
                         <div class="hero-content-two text-center">
                             <div class="tj-sec-heading-two">
-                                <h1 class="title">The Latest On Product Development & Launch Strategies
+                                
+                                <h1 class="title">
+                                    {% if category.name %}
+                                    {{category.name}}
+                                    {% else %}
+                                    Product Development & Marketing Strategy
+                                    {% endif %}
                                 </h1>
                             </div>
                         </div>
@@ -40,7 +46,7 @@
 
 
         <!--========== Blog Section Start ==============-->
-        <section class="tj-blog-section" data-bg-image="assets/images/shape/group-overly.svg' %}">
+        <section class="tj-blog-section pt-3" data-bg-image="assets/images/shape/group-overly.svg' %}">
             <div class="container">
                 <div class="row justify-content-center">
                     {% for page in posts %}

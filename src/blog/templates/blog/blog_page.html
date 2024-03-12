@@ -5,9 +5,18 @@
 
 {% block content %}
 
+
 <!--========== Blog Start ==============-->
 <div class="tj-blog-details">
     <div class="container">
+        <a href="/blog">
+            Blog 
+        </a>
+        > 
+        {% for cat in page.categories.all %}
+        <a href="{% url 'wagtail_serve' '' %}category/{{cat.slug}}">{{cat}}</a>
+    {% endfor %}
+
         <div class="row">
             <div class="col-lg-8">
                         <h1 class="title">
