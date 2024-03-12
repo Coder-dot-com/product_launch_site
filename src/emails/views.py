@@ -34,9 +34,6 @@ def unsubscribe(request):
             email = form.cleaned_data["email"]
             email_object = UserEmail.objects.filter(email=email)
             email_object.update(promo_consent=False)
-
-            #Return message of successfully unsubscribed and also unsubscribe from sendinblue
-
     else:
         form = EmailForm()
         context = {'form': form}
