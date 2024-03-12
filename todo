@@ -3,7 +3,6 @@
 focus on blog_page
 -meta tags for google ....
 https://developers.google.com/search/docs/crawling-indexing/special-tags
--make sure title and description are good
 meta description (may have to add a new field to page model) and <title></title>
 -sitemaps set up properly
 
