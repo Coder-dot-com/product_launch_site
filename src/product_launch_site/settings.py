@@ -38,7 +38,7 @@ STATICFILES_DIRS = [
 
 
 SECRET_KEY = config('SECRET_KEY')
-ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0'] 
+ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0', 'strategyahead.com'] 
 #if false add allowed hosts here
 ALLOWED_HOSTS.extend(
     filter(
