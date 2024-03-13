@@ -9,7 +9,7 @@ services:
       - .:/django   
     environment:
       - ALLOWED_HOSTS=${ALLOWED_HOSTS}
-    command: gunicorn hello_django.wsgi:application --bind 0.0.0.0:8000
+    command: gunicorn product_launch_site.wsgi:application --bind 0.0.0.0:8000
     expose:
       - 8000
     env_file: 
