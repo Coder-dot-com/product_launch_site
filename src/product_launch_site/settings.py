@@ -49,7 +49,7 @@ ALLOWED_HOSTS.extend(
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
-
+print("str(BASE_DIR)", str(BASE_DIR))
 if str(BASE_DIR) == "/APP/src":
     DEBUG = config('DEBUG', default=False, cast=bool)
 
