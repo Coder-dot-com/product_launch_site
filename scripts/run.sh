@@ -9,4 +9,5 @@ python manage.py collectstatic --noinput
 
 python manage.py migrate
 python manage.py fixtree
-gunicorn product_launch_site.wsgi:application --bind 0.0.0.0:8000 --keep-alive 65
+gunicorn product_launch_site.wsgi:application --bind 0.0.0.0:8000
+
