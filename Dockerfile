@@ -4,9 +4,7 @@ ENV PYTHONUNBUFFERED=1
 RUN apt-get update
 RUN apt-get install -y python3-dev
 
-
 WORKDIR /APP
-EXPOSE 8000
 
 COPY requirements.txt requirements.txt
 COPY ./scripts /scripts
@@ -17,24 +15,17 @@ COPY . .
 
 WORKDIR /APP/src
 
-
-
 RUN adduser --disabled-password --no-create-home app
 
 RUN mkdir -p /vol/web/static && \
     chown -R app:app /vol && \
     chmod -R 755 /vol
 
-
 RUN chmod -R +x /scripts
 WORKDIR /APP/src
 
-
-
 ENV PATH="/scripts:/py/bin:$PATH"
 
-# USER app #commented out fot no
-
-
+# USER app #commented out for now as static collection needs root
 
 CMD ["run.sh"]
