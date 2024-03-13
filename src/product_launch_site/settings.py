@@ -49,7 +49,6 @@ ALLOWED_HOSTS.extend(
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
-print("str(BASE_DIR)", str(BASE_DIR))
 if str(BASE_DIR) == "/APP/src":
     DEBUG = config('DEBUG', default=False, cast=bool)
 
@@ -86,6 +85,9 @@ if str(BASE_DIR) == "/APP/src":
         # 'DISABLE_SERVER_SIDE_CURSORS': True,   # <------ Only for PostgreSQL
     }
 }
+    
+    print("setting up production db")
+    
 
     # STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
     # STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
