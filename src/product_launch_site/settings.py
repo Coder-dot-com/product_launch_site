@@ -54,18 +54,18 @@ if str(BASE_DIR) == "/APP/src":
 
     # #HTTPS settings
 
-    USE_X_FORWARDED_HOST = True
+    # USE_X_FORWARDED_HOST = True
 
-    CSRF_TRUSTED_ORIGINS = [f"https://{x}" for x in ALLOWED_HOSTS]
+    # CSRF_TRUSTED_ORIGINS = [f"https://{x}" for x in ALLOWED_HOSTS]
 
-    SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+    # SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
-    CSRF_COOKIE_SECURE = True
+    # CSRF_COOKIE_SECURE = True
 
-    SESSION_COOKIE_SECURE = True
-    SECURE_HSTS_SECONDS = 3600 # increase to 1 year eventually
-    SECURE_SSL_REDIRECT = True #re enable in product
-    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    # SESSION_COOKIE_SECURE = True
+    # SECURE_HSTS_SECONDS = 3600 # increase to 1 year eventually
+    # SECURE_SSL_REDIRECT = True #re enable in product
+    # SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
     #With docker
     # CELERY_BROKER_URL = 'redis://redis:6379'
