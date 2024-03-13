@@ -1,5 +1,5 @@
 
--then deploy to AWS
+-aws s3 bucket for static files and media files
 
 
 
