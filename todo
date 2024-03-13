@@ -1,11 +1,13 @@
 
 2. optimize blog for seo
 
+-settings.py
+-gunicorn
+-docker
+-nginx
+-then deploy to AWS
 
--meta tags for site ownership/analytics etc... from site settings
-
-
--then deploy to AWS  and write articles
+-set up deployment automation scripts
 
 -auto ping google to recrawl webpage check box on save that gets unchecked after completing
 
@@ -19,3 +21,10 @@
 3.5. google analytics (create new google email)
 
 4. Deploy
+
+
+
+
+other:
+
+when blog is active make the ehader link change color like home page

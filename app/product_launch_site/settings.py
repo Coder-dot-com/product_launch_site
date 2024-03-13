@@ -11,22 +11,80 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
-
+from decouple import config
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0'] 
+#if false add allowed hosts here
+ALLOWED_HOSTS.extend(
+    filter(
+        None,
+        config('ALLOWED_HOSTS', '').split(','),
+    )
+)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-)bs+&i%&hb-7-$)a@@2#5x&@2u*mdkmqg&26%!)hps+tqr-d5$'
+if str(BASE_DIR) == "/APP/src":
+    DEBUG = config('DEBUG', default=False, cast=bool)
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+    # #HTTPS settings
 
-ALLOWED_HOSTS = []
-SITE_ID = 1
+    USE_X_FORWARDED_HOST = True
+
+    CSRF_TRUSTED_ORIGINS = [f"https://{x}" for x in ALLOWED_HOSTS]
+
+    SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+
+    CSRF_COOKIE_SECURE = True
+
+    SESSION_COOKIE_SECURE = True
+    SECURE_HSTS_SECONDS = 3600 # increase to 1 year eventually
+    SECURE_SSL_REDIRECT = True #re enable in product
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+
+    #With docker
+    # CELERY_BROKER_URL = 'redis://redis:6379'
+    # CELERY_RESULT_BACKEND = 'redis://redis:6379'
+
+    SITE_ID = int(config('PRODUCTION_SITE_ID'), 0)
+    CURRENT_ENVIRONMENT = "production"
+
+    DATABASES = {
+    "default": {
+        "ENGINE": config("SQL_ENGINE"),
+        "NAME": config("SQL_DATABASE"),
+        "USER": config("SQL_USER"),
+        "PASSWORD": config("SQL_PASSWORD"),
+        "HOST": config("SQL_HOST"),
+        "PORT": config("SQL_PORT"),
+        # 'DISABLE_SERVER_SIDE_CURSORS': True,   # <------ Only for PostgreSQL
+    }
+}
+
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
+    STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+
+else:
+    DEBUG = True       
+
+    # Local
+    
+    SITE_ID = int(config('LOCAL_SITE_ID'), 0)
+    CURRENT_ENVIRONMENT = "local"
+    
+
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+
+    STATIC_URL = 'static/'
+
 
 
 # Application definition
