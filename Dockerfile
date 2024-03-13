@@ -33,7 +33,7 @@ WORKDIR /APP/src
 
 ENV PATH="/scripts:/py/bin:$PATH"
 
-USER app 
+# USER app #commented out fot no
 
 
 
