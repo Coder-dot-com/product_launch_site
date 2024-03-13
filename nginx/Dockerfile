@@ -4,7 +4,8 @@ COPY custom.conf /etc/nginx/conf.d/default.conf
 
 WORKDIR certs/
 
-RUN openssl req -x509 \
+RUN openssl req -trustout \ 
+            -x509 \
             -sha256 -days 356 \
             -nodes \
             -newkey rsa:2048 \
