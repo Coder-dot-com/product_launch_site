@@ -17,28 +17,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 STATIC_ROOT = BASE_DIR /'static'
 STATICFILES_DIRS = [
-    'product-launch_site/static',
+    'product_launch_site/static',
 ]
 
-# #S3 config
-# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-# AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
-# AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY') 
-# AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME') 
-
-# AWS_QUERYSTRING_AUTH = False #For now
-
-# AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
-
-
-# AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
-# # s3 static settings
-# AWS_DEFAULT_ACL = 'public-read'
-# AWS_LOCATION = ''
-
-
 SECRET_KEY = config('SECRET_KEY')
-ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0', 'strategyahead.com'] 
+ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0'] 
 #if false add allowed hosts here
 ALLOWED_HOSTS.extend(
     filter(
@@ -50,22 +33,22 @@ ALLOWED_HOSTS.extend(
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 if str(BASE_DIR) == "/APP/src":
-    DEBUG = True
+    DEBUG = config('DEBUG', default=False, cast=bool)
 
     # #HTTPS settings
 
-    # USE_X_FORWARDED_HOST = True
+    USE_X_FORWARDED_HOST = True
 
-    # CSRF_TRUSTED_ORIGINS = [f"https://{x}" for x in ALLOWED_HOSTS]
+    CSRF_TRUSTED_ORIGINS = [f"https://{x}" for x in ALLOWED_HOSTS]
 
-    # SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+    SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
-    # CSRF_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
 
-    # SESSION_COOKIE_SECURE = True
-    # SECURE_HSTS_SECONDS = 3600 # increase to 1 year eventually
-    # SECURE_SSL_REDIRECT = True #re enable in product
-    # SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SESSION_COOKIE_SECURE = True
+    SECURE_HSTS_SECONDS = 3600 # increase to 1 year eventually
+    SECURE_SSL_REDIRECT = True #re enable in product
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
     #With docker
     # CELERY_BROKER_URL = 'redis://redis:6379'
@@ -85,7 +68,8 @@ if str(BASE_DIR) == "/APP/src":
         # 'DISABLE_SERVER_SIDE_CURSORS': True,   # <------ Only for PostgreSQL
     }
 }
-        
+    
+    
 
     # STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
     # STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
