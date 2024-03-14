@@ -1,23 +1,13 @@
--blog categories pages title tag needs updating to ensure its name of category
+set up google analytics (create new google email)
 
--add auto image generation using pexels api
-
--keyword research
--determine categories
-
--10 posts so site doesn't look too small to google searchbot
-- upodate privacy policy and t and cs
--make sure seo title meta and h1 description are all rendering correctly
--request indexing by google
+-add auto image generation using pexels api and pillow
+-add chatgpt
+-add an image to each article section block modify articlesectionblock
 
 
-Security ensure everything is secure ready for deployment
-    -change default admin url
-    -secret key
-
-3.5. google analytics (create new google email)
 
 
+-change default admin url
 
 
 
@@ -31,3 +21,7 @@ when blog is active make the ehader link change color like home page
 -optimize gitignore/dockerignore/image size
 
 -add celery and redis for future functionality/features
+
+-chaptgpt api for autoamted article gneration based on heading
+
+-overwrite seo_description field to make it required?

@@ -5,6 +5,9 @@
 <meta name="description" content="{% block meta_description %}{% endblock meta_description %}"/>
 
 </head>
+{% autoescape off %}
+{{site.site_global_analytics}}
+{% endautoescape %}
 <body hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
     <div id="tj-overlay-bg2" class="tj-overlay-canvas"></div>
 
