@@ -20,6 +20,8 @@ STATICFILES_DIRS = [
     'product_launch_site/static',
 ]
 
+MEDIA_ROOT =  '/media/'
+
 #S3 config
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
@@ -87,9 +89,9 @@ if str(BASE_DIR) == "/APP/src":
     
     
 
-    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/'
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
     STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
-    
+    MEDIA_URL = AWS_S3_CUSTOM_DOMAIN + MEDIA_ROOT                                                 
 
 
 else:
@@ -111,6 +113,7 @@ else:
     STATIC_URL = 'static/'
 
 
+    MEDIA_URL = '/media/'
 
 # Application definition
 
@@ -228,12 +231,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR /'media'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-WAGTAIL_SITE_NAME = 'Product Launch Site'
+WAGTAIL_SITE_NAME = 'StrategyAhead'
