@@ -43,7 +43,7 @@ START: Theme Default CSS
   /**
      @Font-Size Declaration
    */
-  --tj-fs-body: 16px;
+  --tj-fs-body: 1.3rem;
   --tj-fs-h1: 70px;
   --tj-fs-h2: 50px;
   --tj-fs-h3: 40px;
@@ -1070,7 +1070,7 @@ START: Hero CSS
 }
 
 .tj-hero-section-two {
-  padding-top: 5rem;
+  padding-top: 5rem;;
   padding-bottom: 80px;
   position: relative;
 }
