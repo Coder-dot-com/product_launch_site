@@ -1,21 +1,23 @@
+-blog categories pages title tag needs updating to ensure its name of category
 
--aws s3 bucket for static files and media files
+-add auto image generation using pexels api
+
+-keyword research
+-determine categories
+
+-10 posts so site doesn't look too small to google searchbot
+- upodate privacy policy and t and cs
+-make sure seo title meta and h1 description are all rendering correctly
+-request indexing by google
 
 
-
-
-
-
-
-2.5 upodate privacy policy and t and cs
-
-3. Security ensure everything is secure ready for deployment
+Security ensure everything is secure ready for deployment
     -change default admin url
+    -secret key
 
 3.5. google analytics (create new google email)
 
 
-4. add celery and redis
 
 
 
@@ -25,3 +27,7 @@ other:
 
 
 when blog is active make the ehader link change color like home page
+
+-optimize gitignore/dockerignore/image size
+
+-add celery and redis for future functionality/features

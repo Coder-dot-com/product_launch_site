@@ -2,7 +2,9 @@
 {% load static %}
 {% load wagtailcore_tags  cache  %}
 
+{% block title %}{% if category.name %}{{category.name}}{% else %}Product Development & Marketing Strategy{% endif %}{% endblock title %}
 {% block content %}
+
 
 
         <!--========== Hero Section Start ==============-->
