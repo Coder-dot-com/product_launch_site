@@ -1,8 +1,8 @@
-set up google analytics (create new google email)
 
 -add auto image generation using pexels api and pillow
+    -uplaod it to s3 and create a lambda image resizer to clean the image (security)
 -add chatgpt
--add an image to each article section block modify articlesectionblock
+-add an image to each article section block modify articlesectionblock (chatgpt generated?)
 
 
 
