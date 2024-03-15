@@ -78,8 +78,96 @@ elif height < 667:
 
 centerx, centery = math.floor(width/2), math.floor(height/2)
 
-im = im.crop(box=(centerx-500,centery-333, centerx+500,centery+333))
+img = im.crop(box=(centerx-500,centery-333, centerx+500,centery+333))
 
 
 im.save("img2.png")
 
+from PIL import ImageDraw, ImageFont
+from io import BytesIO
+
+#add text from top left corner 
+
+W = int(img.size[0])
+H = int(img.size[1])
+draw = ImageDraw.Draw(img)
+
+
+def wrap_text(text, width, font):
+    text_lines = []
+    text_line = []
+    text = text.replace('\n', ' [br] ')
+    words = text.split()
+#As text is same calculate this once and then save the result so ready for next
+    for word in words:
+        if word == '[br]':
+            text_lines.append(' '.join(text_line))
+            text_line = []
+            continue
+        text_line.append(word)
+        x1, y1, x2, y2 = font.getbbox(' '.join(text_line))
+        w = x2 - x1
+        if w > width:
+            text_line.pop()
+            text_lines.append(' '.join(text_line))
+            text_line = [word]
+
+    if len(text_line) > 0:
+        text_lines.append(' '.join(text_line))
+
+    return text_lines
+
+title = "test sadds sad dsads a dsaasd dsa  das"
+def text_wrapped(font_size):
+        font_path = f'Montserrat-VariableFont_wght.ttf'
+        font2 = ImageFont.truetype(font_path, font_size)
+        msg2 = wrap_text(text=title, width=600, font=font2)
+        line_spacing = 50
+        total_text_height = len(msg2)*line_spacing
+
+        return locals()
+
+starting_font = 50
+text_wrapped_vars = text_wrapped(starting_font) 
+msg2 = text_wrapped_vars['msg2']
+line_spacing = text_wrapped_vars['line_spacing']
+font2 = text_wrapped_vars['font2']
+h_title=0
+total_text_height = text_wrapped_vars['total_text_height']
+
+longest_line = 0
+for x in msg2:
+    line_length = draw.textlength( x, font=font2)
+    if line_length > longest_line:
+        longest_line = line_length
+
+while total_text_height > 600 or longest_line > 600:
+                starting_font -= 5
+                print('starting_font', starting_font)
+                text_wrapped_vars = text_wrapped(starting_font) 
+                msg2 = text_wrapped_vars['msg2']
+                line_spacing = text_wrapped_vars['line_spacing']
+                font2 = text_wrapped_vars['font2']
+                h_title=0
+                total_text_height = text_wrapped_vars['total_text_height'] 
+            
+                longest_line = 0
+                for x in msg2:
+                    line_length = draw.textlength( x, font=font2)
+                    if line_length > longest_line:
+                        longest_line = line_length
+
+for text in msg2:
+        _, _, width, height = draw.textbbox((0, 0), text=text, font=font2)
+
+        print(width, height)
+        #now create a rectangle using pillo
+        draw.rectangle((200, 100, 300, 200), fill="black")
+        draw.text((100, (h_title+((H-total_text_height)/2))), text , (255, 255, 255), font=font2)
+        h_title += line_spacing
+
+
+img.save('img.jpg', 'JPEG', quality=85) # save image to BytesIO object
+
+img.show()
+# image = File(img_io, name=f"{uuid4()}.jpg") # create a django friendly File object
