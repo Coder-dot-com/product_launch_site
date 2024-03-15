@@ -53,7 +53,7 @@
                 <div class="row justify-content-center">
                     {% for page in posts %}
 
-                    <div class="col-lg-4 col-md-6">
+                    <div class="col-lg-3 col-md-4">
                         <div class="tj-blog-item">
                             {% if page.title_image %}
                             <div class="blog-image">
@@ -61,19 +61,17 @@
                             </div>
                             {% endif %}
                             <div class="blog-content-area">
-                                <div class="blog-meta">
+                                {% comment %} <div class="blog-meta">
                                     <ul class="list-gap">
                                         <li><i class="flaticon-time-left"></i>  {{page.date}}</li>
                                     </ul>
-                                </div>
+                                </div> {% endcomment %}
                                 <h4 class="title-link">
                                     <a class="blog-title" href="{{page.url}}">
                                         {{page.title}}
                                     </a>
                                 </h4>
-                                <div class="tj-blog-button">
-                                    <a class="tj-black-btn" href="{{page.url}}"> Read more</a>
-                                </div>
+                            
                             </div>
                         </div>
                     </div>

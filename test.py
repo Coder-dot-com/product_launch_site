@@ -10,7 +10,7 @@ headers = {
             #Change query to try except with decreasing num of nouns
 query = "apple"
 
-endpoint = f"https://api.pexels.com/v1/search?query={query}&per_page=7"
+endpoint = f"https://api.pexels.com/v1/search?query={query}&per_page=5"
 
 response = requests.get(url=endpoint, headers=headers)
 
@@ -53,7 +53,7 @@ del response
 from PIL import Image
 
 im = Image.open("img.png")
-im.show()
+# im.show()
 
 #crop iamge to required dimensions
 
@@ -80,4 +80,6 @@ centerx, centery = math.floor(width/2), math.floor(height/2)
 
 im = im.crop(box=(centerx-500,centery-333, centerx+500,centery+333))
 
+
+im.save("img2.png")
 
