@@ -1,9 +1,9 @@
 
 -add auto image generation using pexels api and pillow
     -uplaod it to s3 and create a lambda image resizer to clean the image (security)
+    -recreate python lambda in python 3.12
 -add chatgpt
 -add an image to each article section block modify articlesectionblock (chatgpt generated?)
-
 
 
 
