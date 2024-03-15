@@ -8,7 +8,7 @@ headers = {
             }
 
             #Change query to try except with decreasing num of nouns
-query = "test"
+query = "apple"
 
 endpoint = f"https://api.pexels.com/v1/search?query={query}&per_page=7"
 
@@ -59,4 +59,25 @@ im.show()
 
 width, height = im.size
 
-center = width/2, height/2
+print(width, height)
+
+import math
+
+# w/h 1.5 ratio 1000wide , 667 tall #resize so minimum is 667height  or 1000 wide then crop
+
+if width < 1000:
+    width_new_old_ratio = 1000/width
+    new_height = height * width_new_old_ratio
+
+    im = im.resize((1000, math.floor(new_height)))
+elif height < 667:
+    height_new_old_ratio = 667/height
+    new_width = width * height_new_old_ratio
+
+    im = im.resize((math.floor(new_width), 667))
+
+centerx, centery = math.floor(width/2), math.floor(height/2)
+
+im = im.crop(box=(centerx-500,centery-333, centerx+500,centery+333))
+
+
