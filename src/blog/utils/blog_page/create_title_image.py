@@ -45,15 +45,15 @@ def create_title_image(title):
 
     url = f'https://strategy-ahead.s3.amazonaws.com/resized-temp-images/{key.split('/')[-1]}'
 
-    time.sleep(2)
+    time.sleep(5)
     response = requests.get(url, stream=True)
 
     with open('img.png', 'wb') as out_file:
         shutil.copyfileobj(response.raw, out_file)
+    del response
 
 
     im = Image.open("img.png")
-    del response
     # im.show()
 
     #crop iamge to required dimensions
