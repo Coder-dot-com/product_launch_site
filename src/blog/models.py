@@ -15,12 +15,9 @@ from django import forms
 from django.shortcuts import render, redirect
 from wagtail.contrib.routable_page.models import RoutablePageMixin, path, re_path, route
 
-from blog.utils.blog_page.create_gradient import create_gradient
-from PIL import Image, ImageDraw, ImageFont
-from io import BytesIO
-from django.core.files import File
+from blog.utils.blog_page.create_title_image import create_title_image
 
-from blog.utils.blog_page.wrap_text import wrap_text
+
 from product_launch_site.settings import BASE_DIR
 import requests
 
@@ -28,6 +25,10 @@ from django.core.files import File
 from django.core.files.temp import NamedTemporaryFile
 import urllib
 
+from io import BytesIO
+from django.core.files.uploadedfile import InMemoryUploadedFile
+from django.core.files.base import ContentFile
+from PIL import Image
 
 @register_snippet
 class BlogCategory(models.Model):
@@ -162,6 +163,7 @@ class BlogPage(Page):
         blank=True,
     )
     title_image = models.ImageField(upload_to="blog_images/title", null=True, blank=True)
+    generate_title_image = models.BooleanField(default=False)
     second_intro = StreamField(
         [("article_section", ContentBlock())],
         null=True,
@@ -192,6 +194,7 @@ class BlogPage(Page):
         FieldPanel('date'),
         FieldPanel('intro'),
         FieldPanel('title_image'),
+        FieldPanel('generate_title_image'),
         FieldPanel('second_intro'),
         FieldPanel('secondary_title'),
         FieldPanel('secondary_title_image'),
@@ -208,7 +211,14 @@ class BlogPage(Page):
 
 
     def save(self, *args, **kwargs):
-  
+
+        if not self.title_image and self.generate_title_image:
+            img = create_title_image(self.title)
+
+            blob = BytesIO()
+            img.save(blob, 'JPEG', quality=85)  
+            self.title_image.save(f'{self.title}.jpg', File(blob), save=False) 
+
 
         return super().save(*args, **kwargs)
 
