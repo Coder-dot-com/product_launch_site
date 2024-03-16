@@ -62,17 +62,23 @@ def create_title_image(title):
 
 
     # w/h 1.5 ratio 1000wide , 667 tall #resize so minimum is 667height  or 1000 wide then crop
+    width, height = im.size
 
     if width < 1000:
         width_new_old_ratio = 1000/width
         new_height = height * width_new_old_ratio
 
         im = im.resize((1000, math.floor(new_height)))
+
+    width, height = im.size
+    
     if height < 667:
         height_new_old_ratio = 667/height
         new_width = width * height_new_old_ratio
 
         im = im.resize((math.floor(new_width), 667))
+
+    width, height = im.size
 
     centerx, centery = math.floor(width/2), math.floor(height/2)
 
