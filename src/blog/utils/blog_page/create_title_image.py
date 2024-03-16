@@ -50,10 +50,10 @@ def create_title_image(title):
 
     with open('img.png', 'wb') as out_file:
         shutil.copyfileobj(response.raw, out_file)
-    del response
 
 
     im = Image.open("img.png")
+    del response
     # im.show()
 
     #crop iamge to required dimensions
