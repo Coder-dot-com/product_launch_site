@@ -117,17 +117,17 @@ def wrap_text(text, width, font):
 
     return text_lines
 
-title = "test sadds sad dsads a dsaasd dsa  das"
+title = "test sadds sad dsads a dsaasd dsa  dassda ads dsadsa dsadsa dsa dsa ds adsa dsa d sads a dsd"
 def text_wrapped(font_size):
         font_path = f'Montserrat-VariableFont_wght.ttf'
         font2 = ImageFont.truetype(font_path, font_size)
         msg2 = wrap_text(text=title, width=600, font=font2)
-        line_spacing = 50
+        line_spacing = 110
         total_text_height = len(msg2)*line_spacing
 
         return locals()
 
-starting_font = 50
+starting_font = 100
 text_wrapped_vars = text_wrapped(starting_font) 
 msg2 = text_wrapped_vars['msg2']
 line_spacing = text_wrapped_vars['line_spacing']
@@ -162,7 +162,8 @@ for text in msg2:
 
         print(width, height)
         #now create a rectangle using pillo
-        draw.rectangle((200, 100, 300, 200), fill="black")
+        draw.rectangle((100-10 , h_title+((H-total_text_height)/2) -10 , 100 + width +10, h_title+((H-total_text_height)/2) + height +10), fill="black")
+
         draw.text((100, (h_title+((H-total_text_height)/2))), text , (255, 255, 255), font=font2)
         h_title += line_spacing
 
@@ -171,3 +172,5 @@ img.save('img.jpg', 'JPEG', quality=85) # save image to BytesIO object
 
 img.show()
 # image = File(img_io, name=f"{uuid4()}.jpg") # create a django friendly File object
+
+# to do: tweak font styling, cleanup code, delete unnecesssary files, here and in s3, transfer code as a function to override default save method, keep save method clean should bea simple function call create_title_image(self)
