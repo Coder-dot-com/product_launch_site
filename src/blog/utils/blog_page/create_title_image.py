@@ -68,7 +68,7 @@ def create_title_image(title):
         new_height = height * width_new_old_ratio
 
         im = im.resize((1000, math.floor(new_height)))
-    elif height < 667:
+    if height < 667:
         height_new_old_ratio = 667/height
         new_width = width * height_new_old_ratio
 
