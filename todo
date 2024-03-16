@@ -1,9 +1,7 @@
 
--add auto image generation using pexels api and pillow
-    -tidy files and remove them after done from project, using code and also in s3
 
--add chatgpt
--add an image to each article section block modify articlesectionblock (chatgpt generated?)
+-add chatgpt open ai
+-add an image to each article section block modify articlesectionblock
 
 
 
