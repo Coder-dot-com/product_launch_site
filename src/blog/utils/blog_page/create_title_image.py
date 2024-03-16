@@ -116,7 +116,10 @@ def create_title_image(title):
     title = f"{title}".upper()
     def text_wrapped(font_size):
             print('BASE_DIR', BASE_DIR)
-            font_path = f'{BASE_DIR}\\blog\\utils\\blog_page\\Montserrat-Bold.ttf'
+            if str(BASE_DIR) == "/APP/src":
+                font_path = f'{BASE_DIR}/blog/utils/blog_page/Montserrat-Bold.ttf'
+            else:
+                font_path = f'{BASE_DIR}\\blog\\utils\\blog_page\\Montserrat-Bold.ttf'
             print(font_path)
             font2 = ImageFont.truetype(font_path, font_size)
             msg2 = wrap_text(text=title, width=600, font=font2)
