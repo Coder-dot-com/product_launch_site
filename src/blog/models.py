@@ -22,12 +22,10 @@ from product_launch_site.settings import BASE_DIR
 import requests
 
 from django.core.files import File
-from django.core.files.temp import NamedTemporaryFile
 import urllib
 
 from io import BytesIO
-from django.core.files.uploadedfile import InMemoryUploadedFile
-from django.core.files.base import ContentFile
+
 from PIL import Image
 
 @register_snippet
