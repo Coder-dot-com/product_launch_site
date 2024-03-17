@@ -147,11 +147,15 @@ INSTALLED_APPS = [
     'blog',
     'emails',
 
+    #sitemaps
+
     'django.contrib.sites',  
     'django.contrib.sitemaps',
 
     #s3
     'storages',
+
+    'programmatic_pages'
 
 
 ]

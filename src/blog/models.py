@@ -144,7 +144,10 @@ class BlogListingPage(RoutablePageMixin, Page):
 
 class ArticleSectionBlock(blocks.StructBlock):
     header = blocks.CharBlock(required=False)
-    content = blocks.RichTextBlock(required=False)
+    content = blocks.RichTextBlock(required=False, features=['h2', 'h3','h4', 'h5', 'h6', 'bold', 'italic', 'ol',
+                                                            'ul', 'hr', 'link', 'document-link', 'image', 'embed', 'code',
+                                                            'superscript', 'subscript', 'strikethrough', 'blockquote'
+                                                            ])
 
 class ContentBlock(blocks.StructBlock):
     content = blocks.RichTextBlock(required=False)
@@ -218,6 +221,14 @@ class BlogPage(Page):
             blob = BytesIO()
             img.save(blob, 'JPEG', quality=85)  
             self.title_image.save(f'{self.title}.jpg', File(blob), save=False) 
+
+  
+
+        # self.content = [{'type':"article_section" , 'value': {'header': 'asddasads', 'content': 'testing'}},
+                        
+        #                 {'type':"article_section" , 'value': {'header': 'asddasads', 'content': 'testing2'}},
+                        
+        #                 ]
 
 
         return super().save(*args, **kwargs)
