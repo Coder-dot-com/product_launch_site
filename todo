@@ -1,7 +1,8 @@
+-plan creating programattic pages for templates
+    -create a page to be filled with content
+    -update model
 
 
--add chatgpt open ai
--add an image to each article section block modify articlesectionblock
 
 
 
@@ -23,3 +24,8 @@ when blog is active make the ehader link change color like home page
 -chaptgpt api for autoamted article gneration based on heading
 
 -overwrite seo_description field to make it required?
+
+-finish adding chatgpt open ai
+    --add an image to each article section block modify articlesectionblock?
+
+-add meta descriptions to blog category pages
