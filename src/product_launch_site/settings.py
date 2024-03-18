@@ -21,7 +21,7 @@ STATICFILES_DIRS = [
 ]
 
 MEDIA_ROOT =  '/media/'
-ATOMIC_REQUESTS = True
+
 #S3 config
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')

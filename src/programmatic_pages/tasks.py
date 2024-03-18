@@ -13,7 +13,13 @@ logger = get_task_logger(__name__)
 
 @app.task
 def create_product_template_intro(product_template_object_id):
-    template = ProductDevelopmentTemplate.objects.get(id=product_template_object_id)
+    try:
+        template = ProductDevelopmentTemplate.objects.get(id=product_template_object_id)
+    except ProductDevelopmentTemplate.DoesNotExist:
+        time.sleep(10)
+        template = ProductDevelopmentTemplate.objects.get(id=product_template_object_id)
+
+
     if not template.intro:
 
             client = OpenAI(
