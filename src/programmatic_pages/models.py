@@ -30,6 +30,11 @@ class ProductDevelopmentTemplate(models.Model):
     second_intro = models.TextField(max_length=1000, blank=True, null=True)
     idea_generation_content = models.TextField(max_length=2000, blank=True, null=True)
     validation_content = models.TextField(max_length=2000, blank=True, null=True)
+    prototyping_content = models.TextField(max_length=2000, blank=True, null=True)
+    marketing_content = models.TextField(max_length=2000, blank=True, null=True)
+    launch_content = models.TextField(max_length=2000, blank=True, null=True)
+    evaluating_content = models.TextField(max_length=2000, blank=True, null=True)
+
 
     def save(self, *args, **kwargs):
         if not self.intro:
@@ -136,4 +141,112 @@ class ProductDevelopmentTemplate(models.Model):
             content = (response.choices[0].message.content)
             self.validation_content = content
 
+
+        if not self.prototyping_content:
+
+            client = OpenAI(
+            api_key=config("OPENAI_API_KEY"),
+            )
+            response = client.chat.completions.create(
+            model="gpt-4-turbo-preview",
+            messages=[
+                {
+                "role": "system",
+                "content": "Write in plaintext. Write like a human. Do not use markdown formatting. Do not use * or #."
+                },
+                {
+                "role": "user",
+                "content": f"Write an approximately 100 word intro to a section on prototyping/creating a mvp for a post titled '{self.keyword.keyword}'"
+                },
+            ],
+            temperature=1.1,
+            max_tokens=1000,
+            top_p=1,
+            frequency_penalty=0,
+            presence_penalty=0
+            )
+            content = (response.choices[0].message.content)
+            self.prototyping_content = content
+
+
+        if not self.marketing_content:
+
+            client = OpenAI(
+            api_key=config("OPENAI_API_KEY"),
+            )
+            response = client.chat.completions.create(
+            model="gpt-4-turbo-preview",
+            messages=[
+                {
+                "role": "system",
+                "content": "Write in plaintext. Write like a human. Do not use markdown formatting. Do not use * or #. Do not talk about product development templates"
+                },
+                {
+                "role": "user",
+                "content": f"Write an approximately 100 word intro to a subsection on a single marketing template for a post titled '{self.keyword.keyword}'"
+                },
+            ],
+            temperature=1,
+            max_tokens=1000,
+            top_p=1,
+            frequency_penalty=0,
+            presence_penalty=0
+            )
+            content = (response.choices[0].message.content)
+            self.marketing_content = content
+
+
+        if not self.launch_content:
+
+            client = OpenAI(
+            api_key=config("OPENAI_API_KEY"),
+            )
+            response = client.chat.completions.create(
+            model="gpt-4-turbo-preview",
+            messages=[
+                {
+                "role": "system",
+                "content": "Write in plaintext. Write like a human. Do not use markdown formatting. Do not use * or #. Do not talk about what it covers"
+                },
+                {
+                "role": "user",
+                "content": f"Write an approximately 100 word intro to a subsection on a product launch template for a post titled '{self.keyword.keyword}'"
+                },
+            ],
+            temperature=1.2,
+            max_tokens=1000,
+            top_p=1,
+            frequency_penalty=0,
+            presence_penalty=0
+            )
+            content = (response.choices[0].message.content)
+            self.launch_content = content
+
+        if not self.evaluating_content:
+
+            client = OpenAI(
+            api_key=config("OPENAI_API_KEY"),
+            )
+            response = client.chat.completions.create(
+            model="gpt-4-turbo-preview",
+            messages=[
+                {
+                "role": "system",
+                "content": "Write in plaintext. Write like a human. Do not use markdown formatting. Do not use * or #. Do not talk about product development templates"
+                },
+                {
+                "role": "user",
+                "content": f"Write an approximately 100 word intro to a subsection on evaluating the success of a product template for a post titled '{self.keyword.keyword}'"
+                },
+            ],
+            temperature=1,
+            max_tokens=1000,
+            top_p=1,
+            frequency_penalty=0,
+            presence_penalty=0
+            )
+            content = (response.choices[0].message.content)
+            self.evaluating_content = content
+
+            
         return super().save(*args, **kwargs)
