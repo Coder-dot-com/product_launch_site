@@ -30,7 +30,6 @@ class FAQQuestionProductDevelopmentTemplate(models.Model):
 
 class ProductDevelopmentTemplate(models.Model):
 
-
     keyword = models.OneToOneField(Keyword, on_delete=models.CASCADE)
     meta_description = models.TextField(max_length=300, blank=True, null=True)
     intro = models.TextField(max_length=1000, blank=True, null=True)
@@ -296,65 +295,7 @@ class ProductDevelopmentTemplate(models.Model):
             content = (response.choices[0].message.content)
             self.meta_description = content
 
-
-        if not FAQQuestionProductDevelopmentTemplate.objects.filter(product_development_template=self).exists():
-            time.sleep(1)
-
-            client = OpenAI(
-            api_key=config("OPENAI_API_KEY"),
-            )
-            response = client.chat.completions.create(
-            model="gpt-4-turbo-preview",
-            messages=[
-                {
-                "role": "system",
-                "content": "Write in plaintext. Write like a human. Do not use markdown formatting. Do not use * or #. Do not talk about product development templates. Do not include numbers, use a new line for each question"
-                },
-                {
-                "role": "user",
-                "content": f"Write 5 frequently asked questions for a page titled: '{self.keyword.keyword}'"
-                },
-            ],
-            temperature=1,
-            max_tokens=1000,
-            top_p=1,
-            frequency_penalty=0,
-            presence_penalty=0
-            )
-
-            content = (response.choices[0].message.content)
-
-            print('content', content)
-
-            questions = [x for x in content.split('\n') if x != ""]
-
-            for question in questions:
-                time.sleep(1)
-
-                client = OpenAI(
-                api_key=config("OPENAI_API_KEY"),
-                )
-                response = client.chat.completions.create(
-                model="gpt-4-turbo-preview",
-                messages=[
-                    {
-                    "role": "system",
-                    "content": "Write in plaintext. Write like a human. Do not use markdown formatting. Do not use * or #. Do not talk about product development templates."
-                    },
-                    {
-                    "role": "user",
-                    "content": f"Answer the following in approximately 250 words '{question}' for {self.keyword.keyword}"
-                    },
-                ],
-                temperature=1.1,
-                max_tokens=512,
-                top_p=1,
-                frequency_penalty=0,
-                presence_penalty=0
-                )
-                answer = (response.choices[0].message.content)
-                faq_section = FAQQuestionProductDevelopmentTemplate.objects.create(question=question, answer=answer, product_development_template=self)
-
+   
                 
 
         return super().save(*args, **kwargs)

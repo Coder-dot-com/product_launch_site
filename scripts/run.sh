@@ -9,5 +9,5 @@ python manage.py wait_for_db
 
 python manage.py migrate
 python manage.py fixtree
-gunicorn product_launch_site.wsgi:application --bind 0.0.0.0:8000 --timeout 100
+gunicorn product_launch_site.wsgi:application --bind 0.0.0.0:8000
 

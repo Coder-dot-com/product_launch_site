@@ -3,10 +3,9 @@
     https://stackoverflow.com/questions/141487/is-there-an-easy-way-to-populate-slugfield-from-charfield
         -also need to iterate one by one
 
--add a time.sleep for each
+install and setup celery
+-convert all to a celery function -use django signal
   
-
-
 
 -change default admin url
 

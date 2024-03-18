@@ -68,9 +68,9 @@ if str(BASE_DIR) == "/APP/src":
     SECURE_SSL_REDIRECT = True #re enable in product
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
-    #With docker
-    # CELERY_BROKER_URL = 'redis://redis:6379'
-    # CELERY_RESULT_BACKEND = 'redis://redis:6379'
+    # With docker
+    CELERY_BROKER_URL = 'redis://redis:6379'
+    CELERY_RESULT_BACKEND = 'redis://redis:6379'
 
     SITE_ID = int(config('PRODUCTION_SITE_ID'), 0)
     CURRENT_ENVIRONMENT = "production"
@@ -98,7 +98,9 @@ else:
     DEBUG = True       
 
     # Local
-    
+    CELERY_BROKER_URL = 'redis://127.0.0.1:6379'
+    CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379'
+
     SITE_ID = int(config('LOCAL_SITE_ID'), 0)
     CURRENT_ENVIRONMENT = "local"
     
