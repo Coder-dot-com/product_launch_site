@@ -7,6 +7,45 @@ from decouple import config
 import time
 logger = get_task_logger(__name__)
 
+
+
+@app.task
+def create_product_template_intro(product_template_object_id):
+    template = ProductDevelopmentTemplate.objects.get(id=product_template_object_id)
+    if not template.intro:
+
+            client = OpenAI(
+            api_key=config("OPENAI_API_KEY"),
+            )
+            response = client.chat.completions.create(
+            model="gpt-4-turbo-preview",
+            messages=[
+                {
+                "role": "system",
+                "content": "Write in plaintext. Write like a human. Do not use markdown formatting. Do not use * or #. Do not talk about other websites"
+                },
+                {
+                "role": "user",
+                "content": f"Write an approximately 75 word intro for a page titled: '{template.keyword.keyword}'"
+                },
+            ],
+            temperature=1.2,
+            max_tokens=1000,
+            top_p=1,
+            frequency_penalty=0,
+            presence_penalty=0
+            )
+
+            content = (response.choices[0].message.content)
+
+            print('content', content)
+
+            template.intro = content
+            template.save()
+
+
+
+
 @app.task
 def create_faq_product_templates(product_template_object_id):
     template = ProductDevelopmentTemplate.objects.get(id=product_template_object_id)

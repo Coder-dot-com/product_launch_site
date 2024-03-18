@@ -48,12 +48,6 @@ class ProductDevelopmentTemplate(models.Model):
         return FAQQuestionProductDevelopmentTemplate.objects.filter(product_development_template=self)
 
     def save(self, *args, **kwargs):
-        if not self.intro:
-
-            intros = [
-                f"When it comes developing new products because this {self.keyword.keyword.lower()} is sure to help. It is the perfect way to streamline your development process, saving your precious time and ensuring that nothing is left out. "
-            ]   
-            self.intro = random.choice(intros)
 
         
         if not self.title_image:
