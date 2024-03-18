@@ -22,7 +22,7 @@ services:
     restart: always
     build:
       context: .
-    command: celery -A product_launch_site worker --loglevel=INFO
+    command: ['celery', '-A', 'product_launch_site', 'worker', '-l', 'INFO']
     volumes:
       - .:/django
     container_name: celery

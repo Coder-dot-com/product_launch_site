@@ -61,7 +61,7 @@ def create_faq_product_templates(product_template_object_id):
             messages=[
                 {
                 "role": "system",
-                "content": "Write in plaintext. Write like a human. Do not use markdown formatting. Do not use * or #. Do not talk about product development templates. Do not include numbers, use a new line for each question"
+                "content": "Write in plaintext. Write like a human. Do not use markdown formatting. Do not use * or #. Do not talk about product development templates. Do not include numbers, use a new line for each question. Do not talk about examples"
                 },
                 {
                 "role": "user",

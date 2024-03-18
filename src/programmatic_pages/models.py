@@ -69,7 +69,7 @@ class ProductDevelopmentTemplate(models.Model):
             messages=[
                 {
                 "role": "system",
-                "content": "Write in plaintext. Write like a human. Do not use markdown formatting. Do not use * or #."
+                "content": "Write in plaintext. Write like a human. Do not use markdown formatting. Do not use * or #. Do not use the word welcome."
                 },
                 {
                 "role": "user",
@@ -107,14 +107,14 @@ class ProductDevelopmentTemplate(models.Model):
             messages=[
                 {
                 "role": "system",
-                "content": "Write in plaintext. Write like a human. Do not use markdown formatting. Do not use * or #."
+                "content": "Write in plaintext. Write like a human. Do not use markdown formatting. Do not use * or #. Do not use the word welcome."
                 },
                 {
                 "role": "user",
                 "content": f"Write an approximately 100 word intro to a template for idea generation for a post titled '{self.keyword.keyword}'"
                 },
             ],
-            temperature=1.2,
+            temperature=1.1,
             max_tokens=1000,
             top_p=1,
             frequency_penalty=0,
@@ -134,14 +134,14 @@ class ProductDevelopmentTemplate(models.Model):
             messages=[
                 {
                 "role": "system",
-                "content": "Write in plaintext. Write like a human. Do not use markdown formatting. Do not use * or #."
+                "content": "Write in plaintext. Write like a human. Do not use markdown formatting. Do not use * or #. Do not use the word welcome."
                 },
                 {
                 "role": "user",
-                "content": f"Write an approximately 100 word intro to a template for idea validation for a post titled '{self.keyword.keyword}'"
+                "content": f"Write an approximately 100 word pre-amble on a template for idea validation for a post titled '{self.keyword.keyword}'"
                 },
             ],
-            temperature=1.2,
+            temperature=1.1,
             max_tokens=1000,
             top_p=1,
             frequency_penalty=0,
@@ -162,7 +162,7 @@ class ProductDevelopmentTemplate(models.Model):
             messages=[
                 {
                 "role": "system",
-                "content": "Write in plaintext. Write like a human. Do not use markdown formatting. Do not use * or #."
+                "content": "Write in plaintext. Write like a human. Do not use markdown formatting. Do not use * or #. Do not use the word welcome."
                 },
                 {
                 "role": "user",
@@ -225,7 +225,7 @@ class ProductDevelopmentTemplate(models.Model):
                 "content": f"Write an approximately 100 word intro to a subsection on a product launch template for a post titled '{self.keyword.keyword}'"
                 },
             ],
-            temperature=1.2,
+            temperature=1.1,
             max_tokens=1000,
             top_p=1,
             frequency_penalty=0,
