@@ -170,7 +170,7 @@ def create_product_template_validation(product_template_object_id):
     except ProductDevelopmentTemplate.DoesNotExist:
         time.sleep(10)
         template = ProductDevelopmentTemplate.objects.get(id=product_template_object_id)
-
+        print('validation content', template.validation_content)
         if not template.validation_content:
             time.sleep(1)
 

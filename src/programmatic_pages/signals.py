@@ -13,15 +13,14 @@ from .tasks import create_product_template_intro, create_title_image_async, crea
 def save_profile(sender, instance, created, **kwargs):
     template = instance
 
-    time.sleep(5)
-    create_product_template_intro.delay(template.id)
-    time.sleep(1)
-    create_product_template_second_title.delay(template.id)
-    time.sleep(1)
-    create_title_image_async.delay(template.id)
-    time.sleep(1)
-    create_product_template_idea_generation.delay(template.id)
-    time.sleep(1)
+    # create_product_template_intro.delay(template.id)
+    # time.sleep(1)
+    # create_product_template_second_title.delay(template.id)
+    # time.sleep(1)
+    # create_title_image_async.delay(template.id)
+    # time.sleep(1)
+    # create_product_template_idea_generation.delay(template.id)
+    # time.sleep(1)
     create_product_template_validation.delay(template.id)
     time.sleep(1)
     create_product_template_prototyping_content.delay(template.id)
