@@ -67,6 +67,7 @@ class ProductDevelopmentTemplate(models.Model):
         
 
         if not self.second_title:
+            time.sleep(1)
             client = OpenAI(
             api_key=config("OPENAI_API_KEY"),
             )
@@ -94,6 +95,7 @@ class ProductDevelopmentTemplate(models.Model):
 
 
         if not self.second_intro:
+            time.sleep(1)
 
             second_intros = [
                 f"This template provides a structured framework for planning and executing product development projects, guiding teams through each stage from concept to launch. Using a template can enhance efficiency and effectiveness in bringing new products to market. Whether you are a seasoned product manager incorporating the {self.keyword.keyword.lower()} into your workflow can drive innovation and drive success in today's dynamic market. ",
@@ -102,6 +104,7 @@ class ProductDevelopmentTemplate(models.Model):
             self.second_intro = random.choice(second_intros)
 
         if not self.idea_generation_content:
+            time.sleep(1)
 
             client = OpenAI(
             api_key=config("OPENAI_API_KEY"),
@@ -128,6 +131,7 @@ class ProductDevelopmentTemplate(models.Model):
             self.idea_generation_content = content
 
         if not self.validation_content:
+            time.sleep(1)
 
             client = OpenAI(
             api_key=config("OPENAI_API_KEY"),
@@ -155,6 +159,7 @@ class ProductDevelopmentTemplate(models.Model):
 
 
         if not self.prototyping_content:
+            time.sleep(1)
 
             client = OpenAI(
             api_key=config("OPENAI_API_KEY"),
@@ -182,6 +187,7 @@ class ProductDevelopmentTemplate(models.Model):
 
 
         if not self.marketing_content:
+            time.sleep(1)
 
             client = OpenAI(
             api_key=config("OPENAI_API_KEY"),
@@ -209,6 +215,7 @@ class ProductDevelopmentTemplate(models.Model):
 
 
         if not self.launch_content:
+            time.sleep(1)
 
             client = OpenAI(
             api_key=config("OPENAI_API_KEY"),
@@ -235,6 +242,7 @@ class ProductDevelopmentTemplate(models.Model):
             self.launch_content = content
 
         if not self.evaluating_content:
+            time.sleep(1)
 
             client = OpenAI(
             api_key=config("OPENAI_API_KEY"),
@@ -262,6 +270,7 @@ class ProductDevelopmentTemplate(models.Model):
 
 
         if not self.meta_description:
+            time.sleep(1)
 
             client = OpenAI(
             api_key=config("OPENAI_API_KEY"),
@@ -289,6 +298,7 @@ class ProductDevelopmentTemplate(models.Model):
 
 
         if not FAQQuestionProductDevelopmentTemplate.objects.filter(product_development_template=self).exists():
+            time.sleep(1)
 
             client = OpenAI(
             api_key=config("OPENAI_API_KEY"),
@@ -319,7 +329,7 @@ class ProductDevelopmentTemplate(models.Model):
             questions = [x for x in content.split('\n') if x != ""]
 
             for question in questions:
-                time.sleep(3)
+                time.sleep(1)
 
                 client = OpenAI(
                 api_key=config("OPENAI_API_KEY"),
