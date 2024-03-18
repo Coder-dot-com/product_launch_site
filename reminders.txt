@@ -1,0 +1,2 @@
+start celery windows
+celery -A product_launch_site worker -l info -P gevent
