@@ -55,7 +55,11 @@ def create_product_template_intro(product_template_object_id):
 
 @app.task
 def create_title_image_async(product_template_object_id):
-    template = ProductDevelopmentTemplate.objects.get(id=product_template_object_id)
+    try:
+        template = ProductDevelopmentTemplate.objects.get(id=product_template_object_id)
+    except ProductDevelopmentTemplate.DoesNotExist:
+        time.sleep(10)
+        template = ProductDevelopmentTemplate.objects.get(id=product_template_object_id)
     if not template.title_image:
 
             img = create_title_image(template.keyword.keyword)
@@ -69,7 +73,11 @@ def create_title_image_async(product_template_object_id):
 
 @app.task
 def create_faq_product_templates(product_template_object_id):
-    template = ProductDevelopmentTemplate.objects.get(id=product_template_object_id)
+    try:
+        template = ProductDevelopmentTemplate.objects.get(id=product_template_object_id)
+    except ProductDevelopmentTemplate.DoesNotExist:
+        time.sleep(10)
+        template = ProductDevelopmentTemplate.objects.get(id=product_template_object_id)
 
     if not FAQQuestionProductDevelopmentTemplate.objects.filter(product_development_template=template).exists():
 
