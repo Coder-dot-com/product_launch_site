@@ -2,8 +2,9 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 from .models import ProductDevelopmentTemplate, FAQQuestionProductDevelopmentTemplate
 from uuid import uuid4
-
-from openai import OpenAI
+from blog.utils.blog_page.create_title_image import create_title_image
+from io import BytesIO
+from django.core.files import File
 
 from decouple import config
 import time
@@ -14,7 +15,14 @@ def save_profile(sender, instance, created, **kwargs):
     template = instance
 
     time.sleep(5)
-    create_product_template_intro.delay(template.id)
+    if not template.title_image:
+
+            img = create_title_image(template.keyword.keyword)
+
+            blob = BytesIO()
+            img.save(blob, 'JPEG', quality=85)  
+            template.title_image.save(f'{template.keyword.keyword}.jpg', File(blob), save=False)
+            template.save() 
     time.sleep(1)
     create_title_image_async.delay(template.id)
     time.sleep(1)
