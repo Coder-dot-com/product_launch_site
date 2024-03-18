@@ -3,15 +3,8 @@
     https://stackoverflow.com/questions/141487/is-there-an-easy-way-to-populate-slugfield-from-charfield
         -also need to iterate one by one
 
-
-    -create listing page
-    -header link to listing page
-    
-        -reduce/modify so less ai generated
-
-        -add in more dynamic/programmatic content/modify/ so that atleast 50% is considered unique
-            -create amodel method .split('for') and then get the ending term for model productDevelopmentTemplate
-
+-add a time.sleep for each
+  
 
 
 
