@@ -13,3 +13,12 @@ def product_development_template(request, slug):
 
     return render(request, 'product_development_template.html', context=context)
 
+
+
+def product_development_template_listing_page(request):
+
+    templates  = ProductDevelopmentTemplate.objects.all()
+
+    context = {'templates': templates}
+
+    return render(request, "product_development_template_listing_page.html", context)

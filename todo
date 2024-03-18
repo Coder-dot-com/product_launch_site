@@ -1,7 +1,16 @@
 -plan creating programattic pages for templates
-    -create a page to be filled with content
-    -update model
+    -change slug field to be st by overwriting save method
+    https://stackoverflow.com/questions/141487/is-there-an-easy-way-to-populate-slugfield-from-charfield
+        -also need to iterate one by one
 
+
+    -create listing page
+    -header link to listing page
+    
+        -reduce/modify so less ai generated
+
+        -add in more dynamic/programmatic content/modify/ so that atleast 50% is considered unique
+            -create amodel method .split('for') and then get the ending term for model productDevelopmentTemplate
 
 
 
@@ -29,3 +38,6 @@ when blog is active make the ehader link change color like home page
     --add an image to each article section block modify articlesectionblock?
 
 -add meta descriptions to blog category pages
+
+-ai credits usage app
+-feature table e.g. swot analysis, roadmaps etc....

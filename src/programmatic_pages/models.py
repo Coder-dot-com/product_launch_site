@@ -5,6 +5,7 @@ from io import BytesIO
 from django.core.files import File
 from openai import OpenAI
 from decouple import config
+import time
 # Create your models here.
 
 choices = [
@@ -18,6 +19,14 @@ class Keyword(models.Model):
 
     def __str__(self):
         return self.keyword
+
+class FAQQuestionProductDevelopmentTemplate(models.Model):
+    question = models.TextField(max_length=1000, blank=True, null=True)
+    answer = models.TextField(max_length=5000, blank=True, null=True)
+    product_development_template = models.ForeignKey('ProductDevelopmentTemplate', on_delete=models.CASCADE, null=True, blank=True)
+
+    def __str__(self):
+        return self.question 
 
 class ProductDevelopmentTemplate(models.Model):
 
@@ -35,6 +44,9 @@ class ProductDevelopmentTemplate(models.Model):
     launch_content = models.TextField(max_length=2000, blank=True, null=True)
     evaluating_content = models.TextField(max_length=2000, blank=True, null=True)
 
+
+    def get_FAQ(self):
+        return FAQQuestionProductDevelopmentTemplate.objects.filter(product_development_template=self)
 
     def save(self, *args, **kwargs):
         if not self.intro:
@@ -248,5 +260,91 @@ class ProductDevelopmentTemplate(models.Model):
             content = (response.choices[0].message.content)
             self.evaluating_content = content
 
-            
+
+        if not self.meta_description:
+
+            client = OpenAI(
+            api_key=config("OPENAI_API_KEY"),
+            )
+            response = client.chat.completions.create(
+            model="gpt-4-turbo-preview",
+            messages=[
+                {
+                "role": "system",
+                "content": "Write in plaintext. Write like a human. Do not use markdown formatting. Do not use * or #. Do not talk about product development templates"
+                },
+                {
+                "role": "user",
+                "content": f"Write an approximately 160 character meta description for a page titled: '{self.keyword.keyword}'"
+                },
+            ],
+            temperature=1,
+            max_tokens=1000,
+            top_p=1,
+            frequency_penalty=0,
+            presence_penalty=0
+            )
+            content = (response.choices[0].message.content)
+            self.meta_description = content
+
+
+        if not FAQQuestionProductDevelopmentTemplate.objects.filter(product_development_template=self).exists():
+
+            client = OpenAI(
+            api_key=config("OPENAI_API_KEY"),
+            )
+            response = client.chat.completions.create(
+            model="gpt-4-turbo-preview",
+            messages=[
+                {
+                "role": "system",
+                "content": "Write in plaintext. Write like a human. Do not use markdown formatting. Do not use * or #. Do not talk about product development templates. Do not include numbers, use a new line for each question"
+                },
+                {
+                "role": "user",
+                "content": f"Write 5 frequently asked questions for a page titled: '{self.keyword.keyword}'"
+                },
+            ],
+            temperature=1,
+            max_tokens=1000,
+            top_p=1,
+            frequency_penalty=0,
+            presence_penalty=0
+            )
+
+            content = (response.choices[0].message.content)
+
+            print('content', content)
+
+            questions = [x for x in content.split('\n') if x != ""]
+
+            for question in questions:
+                time.sleep(3)
+
+                client = OpenAI(
+                api_key=config("OPENAI_API_KEY"),
+                )
+                response = client.chat.completions.create(
+                model="gpt-4-turbo-preview",
+                messages=[
+                    {
+                    "role": "system",
+                    "content": "Write in plaintext. Write like a human. Do not use markdown formatting. Do not use * or #. Do not talk about product development templates."
+                    },
+                    {
+                    "role": "user",
+                    "content": f"Answer the following in approximately 250 words '{question}' for {self.keyword.keyword}"
+                    },
+                ],
+                temperature=1.1,
+                max_tokens=512,
+                top_p=1,
+                frequency_penalty=0,
+                presence_penalty=0
+                )
+                answer = (response.choices[0].message.content)
+                faq_section = FAQQuestionProductDevelopmentTemplate.objects.create(question=question, answer=answer, product_development_template=self)
+
+                
+
         return super().save(*args, **kwargs)
