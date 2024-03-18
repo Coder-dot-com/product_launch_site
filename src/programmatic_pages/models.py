@@ -49,15 +49,7 @@ class ProductDevelopmentTemplate(models.Model):
 
     def save(self, *args, **kwargs):
 
-        
-        if not self.title_image:
-            img = create_title_image(self.keyword.keyword)
-
-            blob = BytesIO()
-            img.save(blob, 'JPEG', quality=85)  
-            self.title_image.save(f'{self.keyword.keyword}.jpg', File(blob), save=False) 
-
-        
+   
 
         if not self.second_title:
             time.sleep(1)

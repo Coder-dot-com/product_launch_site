@@ -1,10 +1,12 @@
 from product_launch_site.celery import app
 from celery.utils.log import get_task_logger
 from .models import ProductDevelopmentTemplate, FAQQuestionProductDevelopmentTemplate
-
 from openai import OpenAI
 from decouple import config
 import time
+from blog.utils.blog_page.create_title_image import create_title_image
+from io import BytesIO
+from django.core.files import File
 logger = get_task_logger(__name__)
 
 
@@ -44,6 +46,18 @@ def create_product_template_intro(product_template_object_id):
             template.save()
 
 
+
+@app.task
+def create_title_image_async(product_template_object_id):
+    template = ProductDevelopmentTemplate.objects.get(id=product_template_object_id)
+    if not template.title_image:
+
+            img = create_title_image(template.keyword.keyword)
+
+            blob = BytesIO()
+            img.save(blob, 'JPEG', quality=85)  
+            template.title_image.save(f'{template.keyword.keyword}.jpg', File(blob), save=False)
+            template.save() 
 
 
 
