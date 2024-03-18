@@ -5,9 +5,16 @@
 
 install and setup celery
 -convert all to a celery function -use django signal
-  
+-optimize and modify 
+-create pages
+-submit to google search console
+
 
 -change default admin url
+
+-create login and register functionality
+
+plan app and features and begin creating via forked repository
 
 
 

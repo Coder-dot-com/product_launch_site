@@ -49,35 +49,6 @@ class ProductDevelopmentTemplate(models.Model):
 
     def save(self, *args, **kwargs):
 
-   
-
-        if not self.second_title:
-            time.sleep(1)
-            client = OpenAI(
-            api_key=config("OPENAI_API_KEY"),
-            )
-            response = client.chat.completions.create(
-            model="gpt-4-turbo-preview",
-            messages=[
-                {
-                "role": "system",
-                "content": "Write in plaintext. Write like a human. Do not use markdown formatting. Do not use * or #. Do not use the word welcome."
-                },
-                {
-                "role": "user",
-                "content": f"Rephrase the seo phrase '{self.keyword.keyword}'"
-                },
-            ],
-            temperature=1,
-            max_tokens=1000,
-            top_p=1,
-            frequency_penalty=0,
-            presence_penalty=0
-            )
-            content = (response.choices[0].message.content)
-            self.second_title = content
-
-
 
         if not self.second_intro:
             time.sleep(1)
@@ -85,201 +56,17 @@ class ProductDevelopmentTemplate(models.Model):
             second_intros = [
                 f"This template provides a structured framework for planning and executing product development projects, guiding teams through each stage from concept to launch. Using a template can enhance efficiency and effectiveness in bringing new products to market. Whether you are a seasoned product manager incorporating the {self.keyword.keyword.lower()} into your workflow can drive innovation and drive success in today's dynamic market. ",
 
+                f"With the help of this template, teams may plan and carry out product development initiatives in an organised manner, following it from concept to launch. Introducing new products to the market can be done more effectively and efficiently by using a template. In today's dynamic market, integrating {self.keyword.keyword.lower()} into your workflow can foster creativity and success, regardless of your level of experience.",
+
+                f"This template offers a methodical approach to organising and carrying out product development initiatives, assisting groups at every phase from ideation to introduction. When introducing new products to the market, using a template can increase efficacy and efficiency. Using {self.keyword.keyword.lower()} in your workflow can spur creativity and success in today's fast-paced market, regardless of experience level as a product manager.",
+
+                f"By leading teams through every phase of the process, from concept to launch, this template offers an organised framework for organising and carrying out product development projects. When launching new items, using a template can increase efficacy and efficiency. No matter how experienced you are, adding {self.keyword.keyword.lower()} to your workflow can spur success in the fast-paced market of today."
+
             ]   
             self.second_intro = random.choice(second_intros)
 
-        if not self.idea_generation_content:
-            time.sleep(1)
-
-            client = OpenAI(
-            api_key=config("OPENAI_API_KEY"),
-            )
-            response = client.chat.completions.create(
-            model="gpt-4-turbo-preview",
-            messages=[
-                {
-                "role": "system",
-                "content": "Write in plaintext. Write like a human. Do not use markdown formatting. Do not use * or #. Do not use the word welcome."
-                },
-                {
-                "role": "user",
-                "content": f"Write an approximately 100 word intro to a template for idea generation for a post titled '{self.keyword.keyword}'"
-                },
-            ],
-            temperature=1.1,
-            max_tokens=1000,
-            top_p=1,
-            frequency_penalty=0,
-            presence_penalty=0
-            )
-            content = (response.choices[0].message.content)
-            self.idea_generation_content = content
-
-        if not self.validation_content:
-            time.sleep(1)
-
-            client = OpenAI(
-            api_key=config("OPENAI_API_KEY"),
-            )
-            response = client.chat.completions.create(
-            model="gpt-4-turbo-preview",
-            messages=[
-                {
-                "role": "system",
-                "content": "Write in plaintext. Write like a human. Do not use markdown formatting. Do not use * or #. Do not use the word welcome."
-                },
-                {
-                "role": "user",
-                "content": f"Write an approximately 100 word pre-amble on a template for idea validation for a post titled '{self.keyword.keyword}'"
-                },
-            ],
-            temperature=1.1,
-            max_tokens=1000,
-            top_p=1,
-            frequency_penalty=0,
-            presence_penalty=0
-            )
-            content = (response.choices[0].message.content)
-            self.validation_content = content
 
 
-        if not self.prototyping_content:
-            time.sleep(1)
-
-            client = OpenAI(
-            api_key=config("OPENAI_API_KEY"),
-            )
-            response = client.chat.completions.create(
-            model="gpt-4-turbo-preview",
-            messages=[
-                {
-                "role": "system",
-                "content": "Write in plaintext. Write like a human. Do not use markdown formatting. Do not use * or #. Do not use the word welcome."
-                },
-                {
-                "role": "user",
-                "content": f"Write an approximately 100 word intro to a section on prototyping/creating a mvp for a post titled '{self.keyword.keyword}'"
-                },
-            ],
-            temperature=1.1,
-            max_tokens=1000,
-            top_p=1,
-            frequency_penalty=0,
-            presence_penalty=0
-            )
-            content = (response.choices[0].message.content)
-            self.prototyping_content = content
-
-
-        if not self.marketing_content:
-            time.sleep(1)
-
-            client = OpenAI(
-            api_key=config("OPENAI_API_KEY"),
-            )
-            response = client.chat.completions.create(
-            model="gpt-4-turbo-preview",
-            messages=[
-                {
-                "role": "system",
-                "content": "Write in plaintext. Write like a human. Do not use markdown formatting. Do not use * or #. Do not talk about product development templates"
-                },
-                {
-                "role": "user",
-                "content": f"Write an approximately 100 word intro to a subsection on a single marketing template for a post titled '{self.keyword.keyword}'"
-                },
-            ],
-            temperature=1,
-            max_tokens=1000,
-            top_p=1,
-            frequency_penalty=0,
-            presence_penalty=0
-            )
-            content = (response.choices[0].message.content)
-            self.marketing_content = content
-
-
-        if not self.launch_content:
-            time.sleep(1)
-
-            client = OpenAI(
-            api_key=config("OPENAI_API_KEY"),
-            )
-            response = client.chat.completions.create(
-            model="gpt-4-turbo-preview",
-            messages=[
-                {
-                "role": "system",
-                "content": "Write in plaintext. Write like a human. Do not use markdown formatting. Do not use * or #. Do not talk about what it covers"
-                },
-                {
-                "role": "user",
-                "content": f"Write an approximately 100 word intro to a subsection on a product launch template for a post titled '{self.keyword.keyword}'"
-                },
-            ],
-            temperature=1.1,
-            max_tokens=1000,
-            top_p=1,
-            frequency_penalty=0,
-            presence_penalty=0
-            )
-            content = (response.choices[0].message.content)
-            self.launch_content = content
-
-        if not self.evaluating_content:
-            time.sleep(1)
-
-            client = OpenAI(
-            api_key=config("OPENAI_API_KEY"),
-            )
-            response = client.chat.completions.create(
-            model="gpt-4-turbo-preview",
-            messages=[
-                {
-                "role": "system",
-                "content": "Write in plaintext. Write like a human. Do not use markdown formatting. Do not use * or #. Do not talk about product development templates"
-                },
-                {
-                "role": "user",
-                "content": f"Write an approximately 100 word intro to a subsection on evaluating the success of a product template for a post titled '{self.keyword.keyword}'"
-                },
-            ],
-            temperature=1,
-            max_tokens=1000,
-            top_p=1,
-            frequency_penalty=0,
-            presence_penalty=0
-            )
-            content = (response.choices[0].message.content)
-            self.evaluating_content = content
-
-
-        if not self.meta_description:
-            time.sleep(1)
-
-            client = OpenAI(
-            api_key=config("OPENAI_API_KEY"),
-            )
-            response = client.chat.completions.create(
-            model="gpt-4-turbo-preview",
-            messages=[
-                {
-                "role": "system",
-                "content": "Write in plaintext. Write like a human. Do not use markdown formatting. Do not use * or #. Do not talk about product development templates"
-                },
-                {
-                "role": "user",
-                "content": f"Write an approximately 160 character meta description for a page titled: '{self.keyword.keyword}'"
-                },
-            ],
-            temperature=1,
-            max_tokens=1000,
-            top_p=1,
-            frequency_penalty=0,
-            presence_penalty=0
-            )
-            content = (response.choices[0].message.content)
-            self.meta_description = content
 
    
                 
