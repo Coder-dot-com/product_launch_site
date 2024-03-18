@@ -170,8 +170,7 @@ def create_product_template_validation(product_template_object_id):
     except ProductDevelopmentTemplate.DoesNotExist:
         time.sleep(10)
         template = ProductDevelopmentTemplate.objects.get(id=product_template_object_id)
-        print('validation content', template.validation_content)
-        if not template.validation_content:
+    if not template.validation_content:
             time.sleep(1)
 
             client = OpenAI(
@@ -208,7 +207,7 @@ def create_product_template_prototyping_content(product_template_object_id):
         time.sleep(10)
         template = ProductDevelopmentTemplate.objects.get(id=product_template_object_id)
 
-        if not template.prototyping_content:
+    if not template.prototyping_content:
 
             client = OpenAI(
             api_key=config("OPENAI_API_KEY"),
@@ -244,7 +243,7 @@ def create_product_template_marketing_content(product_template_object_id):
         time.sleep(10)
         template = ProductDevelopmentTemplate.objects.get(id=product_template_object_id)
 
-        if not template.marketing_content:
+    if not template.marketing_content:
 
             client = OpenAI(
             api_key=config("OPENAI_API_KEY"),
@@ -281,7 +280,7 @@ def create_product_template_launch_content(product_template_object_id):
         time.sleep(10)
         template = ProductDevelopmentTemplate.objects.get(id=product_template_object_id)
 
-        if not template.launch_content:
+    if not template.launch_content:
 
             client = OpenAI(
             api_key=config("OPENAI_API_KEY"),
@@ -316,7 +315,7 @@ def create_product_template_evaluating_content(product_template_object_id):
         time.sleep(10)
         template = ProductDevelopmentTemplate.objects.get(id=product_template_object_id)
 
-        if not template.evaluating_content:
+    if not template.evaluating_content:
 
             client = OpenAI(
             api_key=config("OPENAI_API_KEY"),
@@ -351,7 +350,7 @@ def create_product_template_meta_description(product_template_object_id):
         time.sleep(10)
         template = ProductDevelopmentTemplate.objects.get(id=product_template_object_id)
 
-        if not template.meta_description:
+    if not template.meta_description:
 
             client = OpenAI(
             api_key=config("OPENAI_API_KEY"),
