@@ -46,6 +46,7 @@ def create_product_template_intro(product_template_object_id):
 
 
 
+
 @app.task
 def create_faq_product_templates(product_template_object_id):
     template = ProductDevelopmentTemplate.objects.get(id=product_template_object_id)
