@@ -14,25 +14,15 @@ def save_profile(sender, instance, created, **kwargs):
     template = instance
 
     create_product_template_intro.delay(template.id)
-    time.sleep(1)
     create_product_template_second_title.delay(template.id)
-    time.sleep(1)
     create_title_image_async.delay(template.id)
-    time.sleep(1)
     create_product_template_idea_generation.delay(template.id)
-    time.sleep(1)
     create_product_template_validation.delay(template.id)
-    time.sleep(1)
     create_product_template_prototyping_content.delay(template.id)
-    time.sleep(1)
     create_product_template_marketing_content.delay(template.id)
-    time.sleep(1)
     create_product_template_launch_content.delay(template.id)
-    time.sleep(1)
     create_product_template_evaluating_content.delay(template.id)
-    time.sleep(1)
     create_product_template_meta_description.delay(template.id)
-    time.sleep(1)
 
 
     create_faq_product_templates.delay(template.id)

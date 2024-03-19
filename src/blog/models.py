@@ -116,10 +116,10 @@ class BlogListingPage(RoutablePageMixin, Page):
         categories = BlogCategory.objects.all()
         sitemap.append(
                 {
+                    'protocol': 'https',
                     "location": self.full_url + 'blog',
                     "lastmod": (self.last_published_at or self.latest_revision_created_at),
                     "priority": 0.6,
-                    'protocol': 'https',
 
                 }
             )
@@ -260,6 +260,7 @@ class BlogPage(Page):
             {
                 "location": self.get_full_url(request),
                 "priority": 0.6,
+                "protocol" : 'https',
                 # fall back on latest_revision_created_at if last_published_at is null
                 # (for backwards compatibility from before last_published_at was added)
                 "lastmod": (self.last_published_at or self.latest_revision_created_at),

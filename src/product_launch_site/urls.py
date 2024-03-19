@@ -30,6 +30,7 @@ from . import views
 
 from django.contrib.sitemaps.views import sitemap
 from .sitemaps import StaticSitemap 
+from programmatic_pages.sitemaps import TemplateListingPage, ProductDevelopmentTemplateArticleSitemap
 
 from wagtail.admin import urls as wagtailadmin_urls
 from wagtail import urls as wagtail_urls
@@ -39,6 +40,9 @@ from wagtail.contrib.sitemaps.sitemap_generator import Sitemap as wgsitemap
 sitemaps = {
       'static':StaticSitemap, #add StaticSitemap to the dictionary
       'wagtail': wgsitemap,
+      'TemplateListingPage': TemplateListingPage,
+      'ProductDevelopmentTemplateArticleSitemap': ProductDevelopmentTemplateArticleSitemap,
+
 }
 
 

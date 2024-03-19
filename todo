@@ -3,12 +3,11 @@
     https://stackoverflow.com/questions/141487/is-there-an-easy-way-to-populate-slugfield-from-charfield
         -also need to iterate one by one
 
-install and setup celery
--convert all to a celery function -use django signal
--optimize and modify 
--create pages
--submit to google search console
 
+-create pages
+-remove time.sleep()
+-submit to google search console
+-add to sitemap
 
 -change default admin url
 
